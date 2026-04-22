@@ -12,6 +12,7 @@
     "build:server:prod": "npm run build -w define && npm run build -w server",
     "build": "tsx ./script/docker-build.ts"
   },
+  "packageManager": "pnpm@10.28.2",
   "workspaces": [
     "./define",
     "./server",
