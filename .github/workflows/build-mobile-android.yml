@@ -65,6 +65,11 @@ jobs:
             --signing-type apksigner
         working-directory: mobile
 
+      - name: Rename APK file
+        run: |
+          mv mobile/android/app/build/outputs/apk/release/app-release-signed.apk mobile/android/app/build/outputs/apk/release/audio-asr-${{ github.ref_name }}.apk
+        working-directory: mobile
+
       - name: Cleanup keystore file
         run: rm -f mobile/android/keystore.jks
 
@@ -74,6 +79,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: mobile/android/app/build/outputs/apk/release/app-release-signed.apk
+          files: mobile/android/app/build/outputs/apk/release/audio-asr-${{ github.ref_name }}.apk
           draft: false
           prerelease: false
