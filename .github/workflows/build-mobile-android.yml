@@ -29,7 +29,9 @@ jobs:
         uses: android-actions/setup-android@v4
         with:
           cmdline-tools-version: 14742923
-
+          packages: 'build-tools;36.0.0 tools platform-tools'
+      - name: Add build-tools to $PATH
+        run: echo "$ANDROID_HOME/build-tools/36.0.0" >> "$GITHUB_PATH"
       - name: Install dependencies
         run: pnpm install
 
