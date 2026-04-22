@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           cache: 'pnpm'
+      - name: install-pnpm
+        uses: pnpm/action-setup@v5
+
 
       - name: Install dependencies
         run: pnpm install
