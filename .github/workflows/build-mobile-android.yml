@@ -67,7 +67,7 @@ jobs:
 
       - name: Rename APK file
         run: |
-          mv mobile/android/app/build/outputs/apk/release/app-release-signed.apk mobile/android/app/build/outputs/apk/release/audio-asr-${{ github.ref_name }}.apk
+          mv android/app/build/outputs/apk/release/app-release-signed.apk android/app/build/outputs/apk/release/audio-asr-${{ github.ref_name }}.apk
         working-directory: mobile
 
       - name: Cleanup keystore file
