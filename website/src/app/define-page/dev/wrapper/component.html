@@ -1,0 +1,10 @@
+<ng-template #templateRef let-attr="attributes">
+  <div class="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      class="toggle"
+      ngModel
+      (ngModelChange)="valueChange($event)"
+    /><ng-container insertField></ng-container>
+  </div>
+</ng-template>

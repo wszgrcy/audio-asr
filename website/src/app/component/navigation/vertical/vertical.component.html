@@ -1,0 +1,36 @@
+<div class="h-full overflow-auto *:mb-1 *:block">
+  <!-- Items -->
+  @for (item of navigation; track trackByFn($index, item)) {
+    <!-- Skip the hidden items -->
+    @if ((item.hidden && !item.hidden(item)) || !item.hidden) {
+      <!-- Basic -->
+      @if (item.type === 'basic') {
+        <app-navigation-basic-item [item]="item"></app-navigation-basic-item>
+      }
+
+      <!-- Collapsable -->
+      @if (item.type === 'collapsable') {
+        <app-navigation-collapsable-item
+          [item]="item"
+          [autoCollapse]="autoCollapse"
+        ></app-navigation-collapsable-item>
+      }
+
+      <!-- Divider -->
+      @if (item.type === 'divider') {
+        <app-navigation-divider-item
+          [item]="item"
+        ></app-navigation-divider-item>
+      }
+
+      <!-- Group -->
+      @if (item.type === 'group') {
+        <app-navigation-group-item
+          [item]="item"
+          [autoCollapse]="autoCollapse"
+          class="*:mb-1 *:block"
+        ></app-navigation-group-item>
+      }
+    }
+  }
+</div>

@@ -1,0 +1,26 @@
+packages:
+  - ./define
+  - ./server
+  - ./website
+  - ./cap-audio-capture
+  - ./cordova-plugin
+  - ./desktop
+  - ./mobile
+  - ./web-common
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - better-sqlite3
+  - core-js
+  - electron
+  - electron-winstaller
+  - esbuild
+  - lmdb
+  - msgpackr-extract
+  - protobufjs
+  - sharp
+  - '@swc/core'
+
+patchedDependencies:
+  '@angular/build': patches/@angular__build.patch
+  drizzle-kit: patches/drizzle-kit.patch

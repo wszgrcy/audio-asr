@@ -1,0 +1,10 @@
+<ng-template #templateRef let-attr="attributes" let-events="events">
+  <ng-container insertField></ng-container>
+  @if (loading$()) {
+    @defer (on viewport({ rootMargin: '0px' })) {
+      <div [initChange]="fn"></div>
+    } @placeholder {
+      <div></div>
+    }
+  }
+</ng-template>

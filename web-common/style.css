@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+@source '../node_modules/@piying-lib/angular-daisyui/fesm2022';
+@source '../node_modules/@piying-lib/angular-daisyui/preset-css/ts';
+@source '../web-common';
+
+div[pi-schema-view-page] {
+  height: 100%;
+  overflow: auto;
+}
+
+#page-audio-device,
+#page-audio-history,
+#page-audio-file {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.navbar {
+  & > *:first-child:last-child {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* todo 伪类填充 */
+.navbar:has(> *:first-child:not(.navbar-start))::before {
+  display: inline-flex;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-start;
+  content: '';
+}
+.navbar:has(> *:last-child:not(.navbar-end))::after {
+  display: inline-flex;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-end;
+  content: '';
+}
+.dock {
+  position: sticky;
+  bottom: 0;
+  flex: 0 0 auto;
+}
+@utility icon-* {
+  width: 1em !important;
+  height: 1em !important;
+  font-size: calc(var(--spacing) * --value(integer)) !important;
+}
+.navbar {
+  min-height: 3rem;
+}
+
+dialog .modal-box {
+  display: flex;
+  flex-direction: column;
+}
+#page-main {
+  .drawer-content > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#app {
+  display: block;
+  height: 100dvh;
+}
+#app > router-outlet + div[pi-schema-view-page] {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  router-outlet + * {
+    flex: 1;
+  }
+}
+.select-form-dialog {
+  .modal-box {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.page-form-dialog {
+  .modal-box {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100dvh;
+    max-width: 100dvw;
+    display: flex;
+    flex-direction: column;
+  }
+}

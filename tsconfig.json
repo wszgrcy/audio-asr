@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "lib": [
+      "ESNext"
+    ],
+    "paths": {
+      "@@web-common": [
+        "./web-common/src/index.ts"
+      ],
+      "@@web-common/common": [
+        "./web-common/src/index.common.ts"
+      ],
+      "@config": [
+        "./server/config"
+      ],
+      "@@domain/*": [
+        "./server/src/domain/*"
+      ],
+      "@@router": [
+        "./server/src/router"
+      ],
+      "@project/server": [
+        "./server/src/output/trpc-api.ts"
+      ],
+      "@@ref/*": [
+        "./*"
+      ],
+      "@audio-server/sdk": [
+        "./server/src/sdk"
+      ],
+      "@desktop/define": [
+        "./desktop/app/define/index.ts"
+      ]
+    },
+    "types": [
+      "node"
+    ]
+  },
+}

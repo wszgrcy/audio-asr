@@ -1,0 +1,76 @@
+name: Build Mobile (Android)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: 'pnpm'
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          cmdline-tools-version: 14742923
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Initialize plugin
+        run: npm run build
+        working-directory: cap-audio-capture
+      - name: Initialize Android platform
+        run: npm run init:android
+        working-directory: mobile
+
+      - name: Build mobile application
+        run: npm run build:android
+        working-directory: mobile
+
+      - name: Generate capacitor assets
+        run: npx capacitor-assets generate --android
+        working-directory: mobile
+
+      - name: Decode and restore JKS keystore
+        run: |
+          echo "${{ secrets.JKS }}" | base64 -d > mobile/android/keystore.jks
+
+      - name: Build Android APK
+        run: |
+          pnpm npx cap build android \
+            --keystorepath mobile/android/keystore.jks \
+            --keystorepass ${{ secrets.ANDROID_KEYSTORE_PASS }} \
+            --keystorealias ${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
+            --keystorealiaspass ${{ secrets.ANDROID_KEYSTORE_ALIAS_PASS }} \
+            --androidreleasetype APK \
+            --signing-type apksigner
+        working-directory: mobile
+
+      - name: Cleanup keystore file
+        run: rm -f mobile/android/keystore.jks
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: mobile/android/app/build/outputs/apk/release/app-release-signed.apk
+          draft: false
+          prerelease: false
+          

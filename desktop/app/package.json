@@ -1,0 +1,9 @@
+{
+  "name": "audio-asr",
+  "version": "1.0.0",
+  "main": "./dist/main.mjs",
+  "private": true,
+  "dependencies": {},
+  "type": "module",
+  "scripts": {}
+}

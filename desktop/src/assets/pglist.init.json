@@ -1,0 +1,11 @@
+[
+  {
+    "sql": [
+      "CREATE TABLE \"audio_global_config\" (\n\t\"id\" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,\n\t\"created_at\" timestamp DEFAULT now() NOT NULL,\n\t\"updated_at\" timestamp NOT NULL,\n\t\"name\" text DEFAULT 'default',\n\t\"description\" text,\n\t\"config\" jsonb NOT NULL,\n\t\"updateSource\" text DEFAULT 'local' NOT NULL\n);\n",
+      "\nCREATE TABLE \"asr_entity\" (\n\t\"id\" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,\n\t\"created_at\" timestamp DEFAULT now() NOT NULL,\n\t\"updated_at\" timestamp NOT NULL,\n\t\"title\" text NOT NULL,\n\t\"source\" text NOT NULL,\n\t\"status\" integer DEFAULT 0 NOT NULL,\n\t\"data\" jsonb NOT NULL,\n\t\"updateSource\" text DEFAULT 'local' NOT NULL,\n\t\"userId\" text\n);\n"
+    ],
+    "bps": true,
+    "folderMillis": 1776427861484,
+    "hash": "26539c296c8021dfb86ea19ff74bfebb47f5779948a111f1d1702ddc73729d87"
+  }
+]

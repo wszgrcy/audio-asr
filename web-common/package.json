@@ -1,0 +1,13 @@
+{
+  "name": "@web-common/raw",
+  "dependencies": {},
+  "scripts": {
+    "init": "tsx ./init/init.db.ts"
+  },
+  "peerDependencies": {
+    "@piying-lib/angular-core": ">=0.1.0",
+    "@piying-lib/angular-daisyui": ">=0.1.0",
+    "tailwindcss": ">=0.1.0",
+    "daisyui": ">=0.1.0"
+  }
+}

@@ -1,0 +1,28 @@
+<ng-template #templateRef let-attr="attributes">
+  <ul
+    [class]="
+      'list bg-base-100 rounded-box shadow-md ' | mergeClass: attr()?.class
+    "
+  >
+    @for (item of list(); track $index) {
+      <li
+        class="list-row cursor-pointer p-2 rounded-none flex"
+        [routerLink]="'/item/' + item.source + '/' + item.id"
+        [routerLinkActive]="'bg-base-200'"
+        #routerLinkActive="routerLinkActive"
+      >
+        <span class="truncate flex-1">{{ item.label }}</span>
+        <span class="justify-self-end text-current/50 flex-none">
+          {{ formatTime | pure: item.data.updatedAt }}
+        </span>
+        <button
+          (click)="itemDelete1($event, item)"
+          class="btn btn-circle btn-xs justify-self-end"
+          [disabled]="routerLinkActive.isActive"
+        >
+          <span class="material-icons icon-4 text-error">delete</span>
+        </button>
+      </li>
+    }
+  </ul>
+</ng-template>

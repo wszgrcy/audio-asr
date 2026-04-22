@@ -1,0 +1,72 @@
+<!-- Item wrapper -->
+<div
+  class="navigation-item-wrapper"
+  [class.app-navigation-item-has-subtitle]="!!item.subtitle"
+  [ngClass]="item.classes?.wrapper"
+>
+  <div class="navigation-item">
+    <!-- Icon -->
+    @if (item.icon) {
+      <mat-icon
+        [ngClass]="item.classes?.icon"
+        [fontIcon]="item.icon"
+      ></mat-icon>
+    }
+
+    <!-- Title & Subtitle -->
+    <div class="navigation-item-title-wrapper">
+      <div class="navigation-item-title">
+        <span [ngClass]="item.classes?.title">
+          {{ item.title }}
+        </span>
+      </div>
+      @if (item.subtitle) {
+        <div class="navigation-item-subtitle">
+          <span [ngClass]="item.classes?.subtitle">
+            {{ item.subtitle }}
+          </span>
+        </div>
+      }
+    </div>
+
+    <!-- Badge -->
+    @if (item.badge) {
+      <div class="navigation-item-badge">
+        <div
+          class="navigation-item-badge-content"
+          [ngClass]="item.badge.classes"
+        >
+          {{ item.badge.title }}
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@for (item of item.children; track trackByFn($index, item)) {
+  <!-- Skip the hidden items -->
+  @if ((item.hidden && !item.hidden(item)) || !item.hidden) {
+    <!-- Basic -->
+    @if (item.type === 'basic') {
+      <app-navigation-basic-item [item]="item"></app-navigation-basic-item>
+    }
+
+    <!-- Collapsable -->
+    @if (item.type === 'collapsable') {
+      <app-navigation-collapsable-item
+        [item]="item"
+        [autoCollapse]="autoCollapse"
+      ></app-navigation-collapsable-item>
+    }
+
+    <!-- Divider -->
+    @if (item.type === 'divider') {
+      <app-navigation-divider-item [item]="item"></app-navigation-divider-item>
+    }
+
+    <!-- Group -->
+    @if (item.type === 'group') {
+      <app-navigation-group-item [item]="item"></app-navigation-group-item>
+    }
+  }
+}

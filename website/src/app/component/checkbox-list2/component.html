@@ -1,0 +1,15 @@
+<ng-template #templateRef let-attr="attributes" let-events="events">
+  @for (item of options(); track $index) {
+    <ng-container
+      [selectlessOutlet]="PiyingView"
+      [selectlessOutletInputs]="
+        schemaOptions$$
+          | pure
+            : (schemaItemFn | pure: templateSchema$$() : item)
+            : item
+            : value$$()
+      "
+      [selectlessOutletOutputs]="modelOutput | pure: item.value"
+    ></ng-container>
+  }
+</ng-template>

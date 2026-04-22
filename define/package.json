@@ -1,0 +1,42 @@
+{
+  "name": "@project/define",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsx ./script/build.ts",
+    "build:dev": "tsx ./script/build.ts",
+    "build:watch": "tsx ./script/build.ts --watch",
+    "start": "npm run build:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "semver": "7.7.2",
+    "static-injector": "6.3.1"
+  },
+  "devDependencies": {
+    "@types/semver": "7.7.0"
+  },
+  "exports": {
+    ".": {
+      "node": "./dist/index.mjs",
+      "import": "./dist/index.mjs",
+      "types": "./index.ts"
+    },
+    "./schema": {
+      "node": "./dist/schema.mjs",
+      "import": "./dist/schema.mjs",
+      "types": "./src/index.schema.ts"
+    },
+    "./auth": {
+      "node": "./dist/auth.mjs",
+      "import": "./dist/auth.mjs",
+      "types": "./src/auth/index.ts"
+    },
+    "./web": {
+      "node": "./dist/web.mjs",
+      "import": "./dist/web.mjs",
+      "types": "./web.index.ts"
+    }
+  }
+}

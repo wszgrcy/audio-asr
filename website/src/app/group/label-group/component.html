@@ -1,0 +1,11 @@
+<div class="grid gap-2">
+  @for (field of field$$().children!(); track field.id || $index) {
+    <label for="">
+      {{ field.props()['title']
+      }}{{ field.form.control?.required$$() ? '*' : '' }}
+    </label>
+    <ng-container
+      *ngTemplateOutlet="fieldTemplateRef; context: { $implicit: field }"
+    ></ng-container>
+  }
+</div>

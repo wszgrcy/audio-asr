@@ -1,0 +1,35 @@
+name: Build Desktop (Windows)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build desktop application
+        run: npm run electron:build
+        working-directory: desktop
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: desktop/dist/output/audio-asr-1.0.0-win.zip
+          draft: false
+          prerelease: false

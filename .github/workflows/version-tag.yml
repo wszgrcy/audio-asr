@@ -1,0 +1,55 @@
+name: Version Tag
+
+on:
+    push:
+        branches:
+            - main
+            - master
+        paths:
+            - "package.json"
+
+permissions:
+    contents: write
+
+jobs:
+    version-tag:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+              with:
+                  fetch-depth: 0
+
+            - name: Get current version
+              id: get_version
+              run: |
+                  VERSION=$(jq -r '.version' package.json)
+                  echo "version=$VERSION" >> $GITHUB_OUTPUT
+                  echo "Current version: $VERSION"
+
+            - name: Check if tag exists
+              id: check_tag
+              run: |
+                  VERSION=${{ steps.get_version.outputs.version }}
+                  TAG="v$VERSION"
+
+                  if git rev-parse "$TAG" >/dev/null 2>&1; then
+                    echo "Tag $TAG already exists"
+                    echo "exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "Tag $TAG does not exist"
+                    echo "exists=false" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Create and push tag
+              if: steps.check_tag.outputs.exists == 'false'
+              run: |
+                  VERSION=${{ steps.get_version.outputs.version }}
+                  TAG="v$VERSION"
+
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+                  git tag -a "$TAG" -m "Release version $VERSION"
+                  git push origin "$TAG"

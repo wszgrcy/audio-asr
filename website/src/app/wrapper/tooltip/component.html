@@ -1,0 +1,13 @@
+<div
+  [matTooltip]="
+    tooltipContent
+      | pure
+        : field$$().form.control?.value
+        : props$$()['description']
+        : props$$()['placeholder']
+        : props$$()['options']
+      | async
+  "
+>
+  <ng-container insertField></ng-container>
+</div>

@@ -1,0 +1,3 @@
+define/src/schema/auth.ts
+website/src/app/openapi/type.d.ts
+desktop/config/plugin/tts/ffmpeg

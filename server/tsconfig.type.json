@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "type-dist",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "lib": ["DOM", "ESNext"],
+    "stripInternal": true
+  },
+  "files": ["./src/sdk/index.ts", "../typings.d.ts", "./src/sdk/typings.d.ts"],
+  "include": []
+}

@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+@source '../../define/';
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+@source '../node_modules/@piying-lib/angular-daisyui/fesm2022';
+@source '../node_modules/@piying-lib/angular-daisyui/preset-css/ts';
+.input.pi-valid,
+.pi-valid {
+  & .input,
+  & .select {
+    @apply border-success;
+  }
+}
+.input.pi-invalid,
+.pi-invalid > .input {
+  & .input,
+  & .select {
+    @apply border-error;
+  }
+}
+
+.pi-untouched.pi-invalid:not(.pi-dirty) {
+  & .input,
+  & .select {
+    @apply border-warning;
+  }
+}
+@utility micon-4 {
+  @apply w-4!;
+  @apply h-4!;
+  @apply text-[16px]!;
+}
+.btn-xs > mat-icon {
+  @apply w-4!;
+  @apply h-4!;
+  @apply text-[16px]!;
+}
+.cdk-global-overlay-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+.cdk-overlay-pane {
+  flex-direction: column;
+}
+cdk-dialog-container.cdk-dialog-container {
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+}
+input,
+select,
+textarea,
+label {
+  outline: none !important;
+}
+.tooltip-content {
+  z-index: 100;
+}
+
+.cdk-overlay-pane {
+  @apply bg-base-100;
+  @apply rounded-box;
+  @apply shadow-xl;
+}

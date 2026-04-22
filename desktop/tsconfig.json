@@ -1,0 +1,33 @@
+{
+  "extends": "../tsconfig.json",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./dist/out-tsc",
+    "module": "es2022",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ESNext", "dom"],
+    "useDefineForClassFields": false
+  },
+  "exclude": ["node_modules"],
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true,
+    "annotateForClosureCompiler": true,
+    "strictInjectionParameters": true,
+    "skipTemplateCodegen": false,
+    "preserveWhitespaces": true,
+    "skipMetadataEmit": false,
+    "disableTypeScriptVersionCheck": true
+  }
+}

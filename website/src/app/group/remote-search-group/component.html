@@ -1,0 +1,31 @@
+<form class="flex">
+  <div class="flex-1 grid grid-cols-4">
+    @for (field of field$$().children!(); track field.id || $index) {
+      @defer (on viewport) {
+        <div class="flex gap-2 items-center">
+          <label for="">
+            {{ field.props()['title'] }}
+          </label>
+          <div
+            [class.hidden]="canHidden | pure: searchContent$() : field.keyPath"
+          >
+            <ng-container
+              *ngTemplateOutlet="
+                fieldTemplateRef;
+                context: { $implicit: field }
+              "
+            ></ng-container>
+          </div>
+        </div>
+      } @placeholder {
+        <div></div>
+      }
+    }
+  </div>
+
+  <div class="flex-[0_0_auto]">
+    <button mat-flat-button (click)="search()" type="submit" color="primary">
+      搜索
+    </button>
+  </div>
+</form>

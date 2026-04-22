@@ -1,0 +1,52 @@
+<ng-template #templateRef>
+  @let item = dataService.current$$().item$$();
+  @switch (item?.status) {
+    @case (null) {
+      <div class="flex justify-center">
+        <span class="loading loading-dots loading-xl text-info"></span>
+        <span class="loading loading-dots loading-xl text-info"></span>
+        <span class="loading loading-dots loading-xl text-info"></span>
+      </div>
+    }
+    @case (2) {}
+    @default {
+      <div role="alert" class="alert alert-info alert-soft rounded-none">
+        <span class="loading loading-spinner loading-xs text-info"></span>
+        <span>处理中</span>
+      </div>
+    }
+  }
+  <div class="flex flex-col h-full overflow-hidden">
+    <div class="flex-1 p-4 overflow-auto">
+      @let list = dataService.current$$().list$$();
+      @for (chunkItem of list; track $index) {
+        <div class="chat chat-start">
+          <div class="chat-image avatar self-center">
+            <div class="rounded-full">
+              <span class="material-icons">attach_file</span>
+            </div>
+          </div>
+          <div class="chat-header">
+            <time class="text-xs opacity-50">
+              {{ chunkItem.range![0] | date: 'HH:mm:ss' : 'utc' }}-{{
+                chunkItem.range![1] | date: 'HH:mm:ss' : 'utc'
+              }}
+            </time>
+          </div>
+          <div class="chat-bubble">
+            <div>{{ chunkItem.origin }}</div>
+            @if (chunkItem.translateText; as translateText) {
+              @for (item of translateText | keyvalue; track $index) {
+                @if ($count === 1) {
+                  <div>{{ item.value }}</div>
+                } @else {
+                  <div>{{ item.key }}:{{ item.value }}</div>
+                }
+              }
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</ng-template>

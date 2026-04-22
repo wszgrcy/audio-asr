@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.gitignore
+README.md
+*.log
+.DS_Store
+server/node_modules
+define/node_modules
+website/node_modules
+cap-audio-capture
+cordova-plugin
+desktop
+mobile
+web-common

@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [mode]="'side'"
+    [opened]="isOpended$()"
+  >
+    <mat-toolbar>菜单</mat-toolbar>
+    <app-navigation [navigation]="list"></app-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" matIconButton (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span>ng20-test</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

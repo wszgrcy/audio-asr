@@ -1,0 +1,30 @@
+services:
+  db:
+    # build: .
+    # image: pgvector/pgvector:0.8.1-pg18-trixie
+    image: postgres:18.3
+    restart: unless-stopped
+    shm_size: 512mb
+    environment:
+      POSTGRES_PASSWORD: postgres12345678
+      POSTGRES_USER: postgres
+
+    volumes:
+      - ./data:/var/lib/postgresql
+
+  # website:
+  #   image: ghcr.io/wszgrcy/audio-website:1.0.10
+  #   restart: unless-stopped
+  #   ports:
+  #     - 4123:80
+  #   depends_on:
+  #     - server
+  server:
+    image: ghcr.io/wszgrcy/audio-server:1.0.0
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./status:/app/.status

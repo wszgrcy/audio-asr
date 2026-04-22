@@ -1,0 +1,20 @@
+{
+  "name": "audio-asr",
+  "description": "音频转换客户端",
+  "author": {
+    "name": "chen",
+    "email": "wszgrcy@gmail.com"
+  },
+  "version": "0.0.0",
+  "main": "./main.mjs",
+  "private": true,
+  "dependencies": {
+    "@reflink/reflink": "0.1.19"
+  },
+  "devDependencies": {
+    "electron": "41.2.1"
+  },
+  "type": "module",
+  "packageManager": "npm@11.6.1",
+  "workspaces": []
+}

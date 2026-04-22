@@ -1,0 +1,141 @@
+// | Chinese           | zh      | 中文            |
+// | English           | en      | 英语            |
+// | French            | fr      | 法语            |
+// | Portuguese        | pt      | 葡萄牙语        |
+// | Spanish           | es      | 西班牙语        |
+// | Japanese          | ja      | 日语            |
+// | Turkish           | tr      | 土耳其语        |
+// | Russian           | ru      | 俄语            |
+// | Arabic            | ar      | 阿拉伯语        |
+// | Korean            | ko      | 韩语            |
+// | Thai              | th      | 泰语            |
+// | Italian           | it      | 意大利语        |
+// | German            | de      | 德语            |
+// | Vietnamese        | vi      | 越南语          |
+// | Malay             | ms      | 马来语          |
+// | Indonesian        | id      | 印尼语          |
+// | Filipino          | tl      | 菲律宾语        |
+// | Hindi             | hi      | 印地语          |
+// | Traditional Chinese | zh-Hant| 繁体中文        |
+// | Polish            | pl      | 波兰语          |
+// | Czech             | cs      | 捷克语          |
+// | Dutch             | nl      | 荷兰语          |
+// | Khmer             | km      | 高棉语          |
+// | Burmese           | my      | 缅甸语          |
+// | Persian           | fa      | 波斯语          |
+// | Gujarati          | gu      | 古吉拉特语      |
+// | Urdu              | ur      | 乌尔都语        |
+// | Telugu            | te      | 泰卢固语        |
+// | Marathi           | mr      | 马拉地语        |
+// | Hebrew            | he      | 希伯来语        |
+// | Bengali           | bn      | 孟加拉语        |
+// | Tamil             | ta      | 泰米尔语        |
+// | Ukrainian         | uk      | 乌克兰语        |
+// | Tibetan           | bo      | 藏语            |
+// | Kazakh            | kk      | 哈萨克语        |
+// | Mongolian         | mn      | 蒙古语          |
+// | Uyghur            | ug      | 维吾尔语        |
+// | Cantonese         | yue     | 粤语            |
+// todo ai提取,未来需要校验
+export const LanguageList = [
+  { value: 'en', en: 'english', zh: '英语' },
+  { value: 'zh', en: 'chinese', zh: '汉语' },
+  { value: 'de', en: 'german', zh: '德语' },
+  { value: 'es', en: 'spanish', zh: '西班牙语' },
+  { value: 'ru', en: 'russian', zh: '俄语' },
+  { value: 'ko', en: 'korean', zh: '韩语' },
+  { value: 'fr', en: 'french', zh: '法语' },
+  { value: 'ja', en: 'japanese', zh: '日语' },
+  { value: 'pt', en: 'portuguese', zh: '葡萄牙语' },
+  { value: 'tr', en: 'turkish', zh: '土耳其语' },
+  { value: 'pl', en: 'polish', zh: '波兰语' },
+  { value: 'ca', en: 'catalan', zh: '加泰罗尼亚语' },
+  { value: 'nl', en: 'dutch', zh: '荷兰语' },
+  { value: 'ar', en: 'arabic', zh: '阿拉伯语' },
+  { value: 'sv', en: 'swedish', zh: '瑞典语' },
+  { value: 'it', en: 'italian', zh: '意大利语' },
+  { value: 'id', en: 'indonesian', zh: '印尼语' },
+  { value: 'hi', en: 'hindi', zh: '印地语' },
+  { value: 'fi', en: 'finnish', zh: '芬兰语' },
+  { value: 'vi', en: 'vietnamese', zh: '越南语' },
+  { value: 'he', en: 'hebrew', zh: '希伯来语' },
+  { value: 'uk', en: 'ukrainian', zh: '乌克兰语' },
+  { value: 'el', en: 'greek', zh: '希腊语' },
+  { value: 'ms', en: 'malay', zh: '马来语' },
+  { value: 'cs', en: 'czech', zh: '捷克语' },
+  { value: 'ro', en: 'romanian', zh: '罗马尼亚语' },
+  { value: 'da', en: 'danish', zh: '丹麦语' },
+  { value: 'hu', en: 'hungarian', zh: '匈牙利语' },
+  { value: 'ta', en: 'tamil', zh: '泰米尔语' },
+  { value: 'no', en: 'norwegian', zh: '挪威语' },
+  { value: 'th', en: 'thai', zh: '泰语' },
+  { value: 'ur', en: 'urdu', zh: '乌尔都语' },
+  { value: 'hr', en: 'croatian', zh: '克罗地亚语' },
+  { value: 'bg', en: 'bulgarian', zh: '保加利亚语' },
+  { value: 'lt', en: 'lithuanian', zh: '立陶宛语' },
+  { value: 'la', en: 'latin', zh: '拉丁语' },
+  { value: 'mi', en: 'maori', zh: '毛利语' },
+  { value: 'ml', en: 'malayalam', zh: '马拉雅拉姆语' },
+  { value: 'cy', en: 'welsh', zh: '威尔士语' },
+  { value: 'sk', en: 'slovak', zh: '斯洛伐克语' },
+  { value: 'te', en: 'telugu', zh: '泰卢固语' },
+  { value: 'fa', en: 'persian', zh: '波斯语' },
+  { value: 'lv', en: 'latvian', zh: '拉脱维亚语' },
+  { value: 'bn', en: 'bengali', zh: '孟加拉语' },
+  { value: 'sr', en: 'serbian', zh: '塞尔维亚语' },
+  { value: 'az', en: 'azerbaijani', zh: '阿塞拜疆语' },
+  { value: 'sl', en: 'slovenian', zh: '斯洛文尼亚语' },
+  { value: 'kn', en: 'kannada', zh: '卡纳达语' },
+  { value: 'et', en: 'estonian', zh: '爱沙尼亚语' },
+  { value: 'mk', en: 'macedonian', zh: '马其顿语' },
+  { value: 'br', en: 'breton', zh: '布列塔尼语' },
+  { value: 'eu', en: 'basque', zh: '巴斯克语' },
+  { value: 'is', en: 'icelandic', zh: '冰岛语' },
+  { value: 'hy', en: 'armenian', zh: '亚美尼亚语' },
+  { value: 'ne', en: 'nepali', zh: '尼泊尔语' },
+  { value: 'mn', en: 'mongolian', zh: '蒙古语' },
+  { value: 'bs', en: 'bosnian', zh: '波斯尼亚语' },
+  { value: 'kk', en: 'kazakh', zh: '哈萨克语' },
+  { value: 'sq', en: 'albanian', zh: '阿尔巴尼亚语' },
+  { value: 'sw', en: 'swahili', zh: '斯瓦希里语' },
+  { value: 'gl', en: 'galician', zh: '加利西亚语' },
+  { value: 'mr', en: 'marathi', zh: '马拉地语' },
+  { value: 'pa', en: 'punjabi', zh: '旁遮普语' },
+  { value: 'si', en: 'sinhala', zh: '僧伽罗语' },
+  { value: 'km', en: 'khmer', zh: '高棉语' },
+  { value: 'sn', en: 'shona', zh: '绍纳语' },
+  { value: 'yo', en: 'yoruba', zh: '约鲁巴语' },
+  { value: 'so', en: 'somali', zh: '索马里语' },
+  { value: 'af', en: 'afrikaans', zh: '南非荷兰语' },
+  { value: 'oc', en: 'occitan', zh: '奥克语' },
+  { value: 'ka', en: 'georgian', zh: '格鲁吉亚语' },
+  { value: 'be', en: 'belarusian', zh: '白俄罗斯语' },
+  { value: 'tg', en: 'tajik', zh: '塔吉克语' },
+  { value: 'sd', en: 'sindhi', zh: '信德语' },
+  { value: 'gu', en: 'gujarati', zh: '古吉拉特语' },
+  { value: 'am', en: 'amharic', zh: '阿姆哈拉语' },
+  { value: 'yi', en: 'yiddish', zh: '意第绪语' },
+  { value: 'lo', en: 'lao', zh: '老挝语' },
+  { value: 'uz', en: 'uzbek', zh: '乌兹别克语' },
+  { value: 'fo', en: 'faroese', zh: '法罗语' },
+  { value: 'ht', en: 'haitian creole', zh: '海地克里奥尔语' },
+  { value: 'ps', en: 'pashto', zh: '普什图语' },
+  { value: 'tk', en: 'turkmen', zh: '土库曼语' },
+  { value: 'nn', en: 'nynorsk', zh: '新挪威语' },
+  { value: 'mt', en: 'maltese', zh: '马耳他语' },
+  { value: 'sa', en: 'sanskrit', zh: '梵语' },
+  { value: 'lb', en: 'luxembourgish', zh: '卢森堡语' },
+  { value: 'my', en: 'myanmar', zh: '缅甸语' },
+  { value: 'bo', en: 'tibetan', zh: '藏语' },
+  { value: 'tl', en: 'tagalog', zh: '他加禄语' },
+  { value: 'mg', en: 'malagasy', zh: '马尔加什语' },
+  { value: 'as', en: 'assamese', zh: '阿萨姆语' },
+  { value: 'tt', en: 'tatar', zh: '塔塔尔语' },
+  { value: 'haw', en: 'hawaiian', zh: '夏威夷语' },
+  { value: 'ln', en: 'lingala', zh: '林加拉语' },
+  { value: 'ha', en: 'hausa', zh: '豪萨语' },
+  { value: 'ba', en: 'bashkir', zh: '巴什基尔语' },
+  { value: 'jw', en: 'javanese', zh: '爪哇语' },
+  { value: 'su', en: 'sundanese', zh: '巽他语' },
+  { value: 'yue', en: 'cantonese', zh: '粤语' },
+] as const;

@@ -1,0 +1,8 @@
+<ng-template #templateRef let-attr="attributes">
+  <ng-container
+    *ngTemplateOutlet="
+      fieldTemplateRef;
+      context: { $implicit: activateChild$$() }
+    "
+  ></ng-container>
+</ng-template>

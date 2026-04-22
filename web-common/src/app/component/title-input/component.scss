@@ -1,0 +1,17 @@
+label:has(input:not(:focus)) {
+  background-color: transparent;
+}
+
+input:not(:focus) {
+  .edit {
+    display: block;
+  }
+}
+input:focus {
+  .check {
+    display: block;
+  }
+  .close {
+    display: block;
+  }
+}

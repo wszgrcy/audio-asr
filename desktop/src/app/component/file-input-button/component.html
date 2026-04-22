@@ -1,0 +1,26 @@
+<ng-template #templateRef let-attr="attributes">
+  @let isDisabled = isLoading$() || disabled();
+
+  <button
+    [attributes]="attr()"
+    [excludes]="['class', 'type']"
+    [class]="attr()?.class | mergeClass: wrapperClass$() : 'relative'"
+    (click)="fileChange()"
+    [disabled]="isDisabled"
+    type="button"
+  >
+    @if (isLoading$() && !disableLoadingIcon()) {
+      <span
+        [class]="
+          'loading loading-spinner'
+            | cssPrefix
+            | mergeClass: ('absolute z-10' | twPrefix)
+        "
+      ></span>
+    }
+    <ng-template
+      [selectlessOutlet]="StrOrTemplateComponent"
+      [selectlessOutletInputs]="{ content: content }"
+    ></ng-template>
+  </button>
+</ng-template>

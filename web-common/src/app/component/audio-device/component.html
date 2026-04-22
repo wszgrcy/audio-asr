@@ -1,0 +1,145 @@
+<ng-template #templateRef>
+  @let item = dataService.current$$().item$$();
+  @switch (item?.status) {
+    @case (null) {
+      <div class="flex justify-center">
+        <span class="loading loading-dots loading-xl text-info"></span>
+        <span class="loading loading-dots loading-xl text-info"></span>
+        <span class="loading loading-dots loading-xl text-info"></span>
+      </div>
+    }
+  }
+  @if (workingHint$$()) {
+    <div role="alert" class="alert alert-success alert-soft rounded-none">
+      <span>{{ workingHint$$() }}</span>
+    </div>
+  }
+  <div class="flex flex-col h-full overflow-hidden">
+    <div class="flex-1 p-4 overflow-auto flex flex-col-reverse pb-0">
+      @let list = dataService.current$$().list$$();
+
+      @for (item of reverseList | pure: list; track $index) {
+        @if (item.type === 'output') {
+          <div class="chat chat-start">
+            <div class="chat-image avatar self-center">
+              <div class="rounded-full">
+                <span class="material-icons">spatial_audio</span>
+              </div>
+            </div>
+            <div class="chat-header">
+              @if (item.range) {
+                <time class="text-xs opacity-50">
+                  {{ item.range[0] | date: 'yyyy-MM-dd HH:mm:ss' }}-{{
+                    item.range[1] | date: 'HH:mm:ss'
+                  }}
+                </time>
+              }
+            </div>
+            <div class="chat-bubble">
+              <div>{{ item.origin }}</div>
+              @if (item.translateText; as translateText) {
+                @for (item of translateText | keyvalue; track $index) {
+                  @if ($count === 1) {
+                    <div>{{ item.value }}</div>
+                  } @else {
+                    <div>{{ item.key }}:{{ item.value }}</div>
+                  }
+                }
+              }
+            </div>
+          </div>
+        } @else if (item.type === 'input') {
+          <div class="chat chat-end">
+            <div class="chat-image avatar self-center">
+              <div
+                class="rounded-full btn btn-circle btn-ghost btn-xs"
+                [cdkMenuTriggerFor]="menuItem"
+              >
+                <span class="material-icons">keyboard_voice</span>
+              </div>
+
+              <ng-template #menuItem>
+                <ul class="menu bg-base-200 rounded-box" cdkMenu>
+                  <li (click)="saveAbove(item)" cdkMenuItem><a>归档以上</a></li>
+                  <li (click)="deleteItem(item)" cdkMenuItem>
+                    <a>删除此项</a>
+                  </li>
+                </ul>
+              </ng-template>
+            </div>
+            <div class="chat-header">
+              @if (item.range) {
+                <time class="text-xs opacity-50">
+                  {{ item.range[0] | date: 'yyyy-MM-dd HH:mm:ss' }}-{{
+                    item.range[1] | date: 'HH:mm:ss'
+                  }}
+                </time>
+              }
+            </div>
+            <div class="chat-bubble flex items-center">
+              @switch (item.status) {
+                @case (0) {
+                  <span
+                    class="loading loading-spinner loading-xs text-primary"
+                  ></span>
+                }
+                @case (1) {
+                  <span
+                    class="loading loading-dots loading-xs text-secondary"
+                  ></span>
+                }
+              }
+              <div>
+                <div class="break-all">{{ item.origin }}</div>
+                @if (item.translateText; as translateText) {
+                  @for (item of translateText | keyvalue; track $index) {
+                    @if ($count === 1) {
+                      <div class="break-all">{{ item.value }}</div>
+                    } @else {
+                      <div class="break-all">
+                        {{ item.key }}:{{ item.value }}
+                      </div>
+                    }
+                  }
+                }
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+    <ng-template #buttonControl let-control="control">
+      @if (control.start$() !== READY_STATUS) {
+        <button
+          (click)="start(control)"
+          [attr.data-tip]="'开始监听' + control.nameMessage$$() + '音频'"
+          class="btn btn-circle tooltip"
+          [disabled]="control.start$() > 0"
+        >
+          <span class="material-icons text-primary">{{
+            control.type === 'output' ? 'spatial_audio' : 'spatial_audio_off'
+          }}</span>
+        </button>
+      } @else {
+        <button
+          (click)="stop(control)"
+          [attr.data-tip]="'停止监听' + control.nameMessage$$() + '音频'"
+          class="btn btn-circle tooltip"
+        >
+          <span class="material-icons text-error">stop</span>
+        </button>
+      }
+    </ng-template>
+
+    @if (!isReadonly$$()) {
+      <div class="flex gap-4 justify-around p-4">
+        <ng-container
+          *ngTemplateOutlet="buttonControl; context: { control: output }"
+        ></ng-container>
+        <ng-container
+          *ngTemplateOutlet="buttonControl; context: { control: input }"
+        ></ng-container>
+      </div>
+    }
+  </div>
+</ng-template>

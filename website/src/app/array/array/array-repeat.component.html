@@ -1,0 +1,23 @@
+<div class="grid gap-2">
+  @for (child of field$$().children!(); track child; let i = $index) {
+    <div class="flex items-center gap-2 *:first:flex-1">
+      <ng-container
+        *ngTemplateOutlet="fieldTemplateRef; context: { $implicit: child }"
+      ></ng-container>
+
+      <button
+        type="button"
+        (click)="remove(i)"
+        class="btn btn-error btn-circle"
+        [disabled]="minLength() ? $count <= minLength()! : false"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+  }
+</div>
+<div class="mt-2">
+  <button class="btn btn-primary btn-circle" type="button" (click)="add()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

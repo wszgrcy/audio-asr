@@ -1,0 +1,35 @@
+<ng-template #templateRef let-attr="attributes">
+  @let isDisabled = isLoading$() || disabled();
+
+  <button
+    [attributes]="attr()"
+    [excludes]="['class', 'type']"
+    [class]="attr()?.class | mergeClass: wrapperClass$() : 'relative'"
+    (click)="el.click()"
+    [disabled]="isDisabled"
+    [type]="attr()?.type ?? 'button'"
+  >
+    <input
+      #el
+      type="file"
+      class="absolute left-0 right-0 top-0 bottom-0 opacity-0 pointer-events-none"
+      (change)="fileChange(el)"
+      (click)="el.value = ''"
+      [accept]="accept()"
+    />
+
+    @if (isLoading$() && !disableLoadingIcon()) {
+      <span
+        [class]="
+          'loading loading-spinner'
+            | cssPrefix
+            | mergeClass: ('absolute z-10' | twPrefix)
+        "
+      ></span>
+    }
+    <ng-template
+      [selectlessOutlet]="StrOrTemplateComponent"
+      [selectlessOutletInputs]="{ content: content }"
+    ></ng-template>
+  </button>
+</ng-template>

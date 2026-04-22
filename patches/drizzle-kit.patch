@@ -1,0 +1,13 @@
+diff --git a/bin.cjs b/bin.cjs
+index 289fd467b9b9334640e9211536d32ed0ab9cd45e..3747ce79a022d7d448279ae2b60fabc8bb48f176 100755
+--- a/bin.cjs
++++ b/bin.cjs
+@@ -26840,7 +26840,7 @@ ${BREAKPOINT}ALTER TABLE ${tableNameWithSchema} ADD CONSTRAINT "${statement.newC
+       }
+       convert(statement) {
+         const { name } = statement;
+-        return `DROP SCHEMA "${name}";
++        return `DROP SCHEMA "${name}" CASCADE;
+ `;
+       }
+     };
