@@ -4,6 +4,7 @@ import {
   Injectable,
   InjectionToken,
   Injector,
+  Signal,
   signal,
 } from '@angular/core';
 import { map, Observable } from 'rxjs';
@@ -17,16 +18,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { mergeFloat32Array } from '../../../util/float32-merge';
 import { AudioDataService } from './audio-router.service';
-
+const AudioDataChildServiceToken = new InjectionToken<
+  Signal<AudioDataChildService>
+>('AudioDataChildServiceToken');
 const TypeToken = new InjectionToken<'input' | 'output'>('type');
-const MediaStreamToken = new InjectionToken<
-  Promise<{
-    dispose: () => void;
-    data$$: Observable<MessageEvent<any>>;
-    msInstance: MediaStream;
-    track: MediaStreamTrack;
-  }>
->('mediaStream');
+
 export enum AudioState {
   CLOSED,
   INITIALIZING,
@@ -38,21 +34,21 @@ export enum AudioState {
 export class AudioStream {
   #audioOutput = inject(AudioDeviceService);
   start$ = signal(AudioState.CLOSED);
+  #type = inject(TypeToken);
   nameMessage$$ = computed(() => {
-    return this.type === 'input' ? '麦克风' : '扬声器';
+    return this.#type === 'input' ? '麦克风' : '扬声器';
   });
   #streamDispose?: () => any;
   #websocket = inject(WebsocketService);
-  wsInstance: undefined | ReturnType<WebsocketService['init']>;
-  type = inject(TypeToken);
+  #wsInstance: undefined | ReturnType<WebsocketService['init']>;
 
   vad?: MicVAD;
-  data = inject(AudioDataChildService);
+  data$$ = inject(AudioDataChildServiceToken);
   #toast = inject(ToastService);
   async start() {
     this.start$.set(AudioState.INITIALIZING);
     const ws$$ = this.#websocket.init();
-    this.wsInstance = ws$$;
+    this.#wsInstance = ws$$;
 
     const ws = await ws$$;
     // 传入配置,发射给后端,进行监听
@@ -65,15 +61,15 @@ export class AudioStream {
     let stream;
     let dispose;
     try {
-      ({ stream, dispose } = await this.#audioOutput.createAudio(this.type));
+      ({ stream, dispose } = await this.#audioOutput.createAudio(this.#type));
     } catch (error) {
       this.stop();
       return;
     }
     this.start$.set(AudioState.MEDIACONNECTION_INITED);
     this.#streamDispose = dispose;
-    const config = await this.data.getConfig();
-    const typeConfig = config.device![this.type];
+    const config = await this.data$$().getConfig();
+    const typeConfig = config.device![this.#type];
     ws.setConfig({
       type: 'init',
       value: {
@@ -81,8 +77,8 @@ export class AudioStream {
         sampleRate: 16000,
       },
     });
-    ws.setConfig({ type: 'chunkStart', value: this.data.newChunkId$() });
-    await this.data.appendChunkItemTemp(this.type, Date.now());
+    ws.setConfig({ type: 'chunkStart', value: this.data$$().newChunkId$() });
+    await this.data$$().appendChunkItemTemp(this.#type, Date.now());
     this.start$.set(AudioState.CONFIG_INITED);
 
     ws.close$.subscribe(() => {
@@ -99,11 +95,11 @@ export class AudioStream {
       const data = JSON.parse(event.data) as any;
       switch (data.type) {
         case 'origin': {
-          this.data.editChunkItemTemp(data.value);
+          this.data$$().editChunkItemTemp(data.value);
           break;
         }
         case 'translate': {
-          this.data.editChunkItemTemp(data.value);
+          this.data$$().editChunkItemTemp(data.value);
           break;
         }
         case 'error': {
@@ -115,7 +111,7 @@ export class AudioStream {
           break;
         }
         case 'audio-end': {
-          this.data.chunkItemTempEnd(data.value);
+          this.data$$().chunkItemTempEnd(data.value);
           break;
         }
         default:
@@ -125,19 +121,19 @@ export class AudioStream {
 
     let list: Float32Array[] = [];
     // todo 还可以将每次的音频都保存
-    let maxSplitTime = config.redemptionMs;
+    let maxSplitTime = config.maxSplitTime;
     let start = performance.now();
     let lastSplitTime = start;
 
     const splitChunk = () => {
-      const oldId = this.data.newChunkId$();
-      this.data.updateChunkId();
-      ws.setConfig({ type: 'chunkStart', value: this.data.newChunkId$() });
+      const oldId = this.data$$().newChunkId$();
+      this.data$$().updateChunkId();
+      ws.setConfig({ type: 'chunkStart', value: this.data$$().newChunkId$() });
       if (list.length) {
         ws.sendBuffer(mergeFloat32Array(list));
         list = [];
       }
-      this.data.updateNextChunkItemTemp(oldId, this.type);
+      this.data$$().updateNextChunkItemTemp(oldId, this.#type);
       lastSplitTime = performance.now();
     };
 
@@ -158,11 +154,10 @@ export class AudioStream {
           list = [];
           start = end;
         }
-        const sinceLastSplit = end - lastSplitTime;
-        if (p.notSpeech > 1 && sinceLastSplit / 1000 > maxSplitTime) {
+        const sinceLastSplit = end - lastSplitTime;        
+        if (p.notSpeech > 0 && sinceLastSplit / 1000 > maxSplitTime) {
           splitChunk();
         }
-        p.notSpeech
       },
       model: 'v5',
     });
@@ -171,31 +166,22 @@ export class AudioStream {
   }
 
   async stop() {
-    const start = await (await this.wsInstance)?.inited$$;
+    const start = await (await this.#wsInstance)?.inited$$;
     this.start$.set(AudioState.CLOSED);
     this.#streamDispose?.();
-    (await this.wsInstance)?.close();
+    (await this.#wsInstance)?.close();
     this.vad?.destroy();
     this.vad = undefined;
     this.#streamDispose = undefined;
-    this.wsInstance = undefined;
+    this.#wsInstance = undefined;
     if (start) {
-      await this.data.templateListEnd(this.data.newChunkId$());
+      await this.data$$().templateListEnd(this.data$$().newChunkId$());
     }
   }
 }
+// 理论上运行时只能有一个input/output
 @Injectable()
 export class AudioService {
-  #activateRoute = inject(ActivatedRoute);
-  readonly id$ = toSignal<string>(
-    this.#activateRoute.params.pipe(map((item) => item['id'])),
-  );
-  #update$$ = signal(0);
-  updateList() {
-    this.#update$$.update((a) => a + 1);
-  }
-
-  list$ = signal<ChunkListItemType[]>([]);
   #injector = inject(Injector);
   #dataService = inject(AudioDataService);
   create(type: 'input' | 'output') {
@@ -203,19 +189,13 @@ export class AudioService {
       providers: [
         AudioStream,
         { provide: TypeToken, useValue: type },
-        { provide: MediaStreamToken, useValue: '' },
         {
-          provide: AudioDataChildService,
-          useValue: this.#dataService.current$$(),
+          provide: AudioDataChildServiceToken,
+          useValue: this.#dataService.current$$,
         },
       ],
       parent: this.#injector,
     });
     return instance.get(AudioStream);
-  }
-
-  /** 当前列表重置,比如归档后 */
-  restList() {
-    this.list$.set([]);
   }
 }

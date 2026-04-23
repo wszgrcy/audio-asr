@@ -3,7 +3,7 @@ import { asControl } from '@piying/valibot-visit';
 import { actions, disableWhen, setComponent } from '@piying/view-angular-core';
 import { LanguageList } from '../const/language';
 import { map } from 'rxjs';
-const STR_DEFINE = v.pipe(v.string());
+const STR_DEFINE = v.string();
 export const ASRType = v.picklist([
   'audio-device',
   'audio-history',
@@ -49,7 +49,7 @@ export const TranslateConfigDefine = v.object({
 });
 export const AudioConfigDefine = v.object({
   baseURL: v.pipe(
-    v.optional(STR_DEFINE, 'http://whisper:8080'),
+    v.optional(STR_DEFINE, 'http://whisper:8080/v1'),
     v.title('地址'),
   ),
   apiKey: v.pipe(v.optional(STR_DEFINE), v.title('apiKey')),
@@ -80,13 +80,13 @@ export const AudioToTextDefine = v.object({
 export const DeviceInputOutputDefine = v.object({
   input: v.pipe(
     v.optional(AudioToTextDefine),
-    v.title('扬声器'),
+    v.title('麦克风'),
     actions.wrappers.patch(['fieldset']),
     actions.class.top('bg-base-200 border-base-300 rounded-box border p-4'),
   ),
   output: v.pipe(
     v.optional(AudioToTextDefine),
-    v.title('麦克风'),
+    v.title('扬声器'),
     actions.wrappers.patch(['fieldset']),
     actions.class.top('bg-base-200 border-base-300 rounded-box border p-4'),
   ),

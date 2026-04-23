@@ -27,10 +27,11 @@ services:
     #   - "8080:8080"
     volumes:
       - ./models:/models
-    command: "\"whisper-server -et 2.0 --suppress-nst --host 0.0.0.0 -m
-      /models/ggml-large-v3-turbo-q8_0.bin --request-path
+    command: "\"whisper-server -t 24 -et 2.0 --suppress-nst --host 0.0.0.0 -m
+      /models/ggml-small-q8_0.bin --request-path
       /v1/audio/transcriptions --inference-path \\\"\\\"\""
     ulimits:
       memlock:
         soft: -1
         hard: -1
+

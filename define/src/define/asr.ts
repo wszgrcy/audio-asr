@@ -3,7 +3,7 @@ import { AllAudioConfig } from './asr-config';
 import { Range } from './asr-config';
 export const ChunkListItem = v.object({
   id: v.string(),
-  /** input扬声器 output 麦克风/输入 */
+  /** input 麦克风/输入 output 扬声器  */
   type: v.picklist(['input', 'output']),
   range: Range,
   origin: v.optional(v.string()),
