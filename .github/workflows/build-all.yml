@@ -191,23 +191,4 @@ jobs:
                   tags: ${{ steps.meta.outputs.tags }}
                   labels: ${{ steps.meta.outputs.labels }}
 
-    create-tag:
-        needs: [ check-version, build-windows, build-android, build-server ]
-        runs-on: ubuntu-latest
-        if: needs.check-version.outputs.is-new-version == 'true'
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v6
-              with:
-                  fetch-depth: 0
 
-            - name: Configure git
-              run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-
-            - name: Create and push tag
-              run: |
-                  VERSION=${{ needs.check-version.outputs.version }}
-                  git tag "$VERSION"
-                  git push origin "$VERSION"
