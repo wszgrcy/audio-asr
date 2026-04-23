@@ -33,6 +33,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: desktop/dist/output/audio-asr-1.0.0-win.zip
+          files: desktop/dist/output/audio-asr-${{github.ref_name}}-win.zip
           draft: false
           prerelease: false
