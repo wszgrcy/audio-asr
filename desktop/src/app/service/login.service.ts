@@ -37,7 +37,7 @@ export class LoginService implements ILoginService {
       ).user.findConfig.mutate();
       await this.#injector
         .get(GlobalConfigService)
-        .patchConfig(config?.config, undefined, 'server');
+        .patchConfig(config?.config??{}, undefined, 'server');
 
       await this.router.navigateByUrl(RouterConfig.main);
     } catch (error) {
