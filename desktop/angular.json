@@ -108,7 +108,8 @@
                 "process.env.WORK_PLATFORM": "'client'",
                 "process.env.NODE_ENV": "'production'",
                 "process.platform": "'browser'"
-              }
+              },
+              "baseHref": "./"
             },
             "web": {
               "optimization": false,
