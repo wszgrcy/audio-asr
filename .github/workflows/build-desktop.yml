@@ -3,7 +3,8 @@ name: Build Desktop (Windows)
 on:
   push:
   workflow_dispatch:
-
+permissions:
+  contents: write
 jobs:
   build-windows:
     runs-on: windows-latest
