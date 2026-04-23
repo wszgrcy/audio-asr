@@ -10,7 +10,8 @@
     "test:mcp": "npx @modelcontextprotocol/inspector",
     "build:website:prod": "npm run build -w define && npm run build -w website",
     "build:server:prod": "npm run build -w define && npm run build -w server",
-    "build": "tsx ./script/docker-build.ts"
+    "build": "tsx ./script/docker-build.ts",
+    "release": "tsx ./script/release.ts"
   },
   "packageManager": "pnpm@10.28.2",
   "workspaces": [
