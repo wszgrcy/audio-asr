@@ -19,7 +19,7 @@ services:
     volumes:
       - ./status:/app/.status
   whisper:
-    image: ghcr.io/ggml-org/whisper.cpp:main
+    image: ghcr.io/ggml-org/whisper.cpp:main-vulkan
     container_name: whisper
     # ports:
     #   - "8080:8080"
@@ -28,6 +28,9 @@ services:
     command: "\"whisper-server -et 2.0 --suppress-nst --host 0.0.0.0 -m
       /models/ggml-large-v3-turbo-q8_0.bin --request-path
       /v1/audio/transcriptions --inference-path \\\"\\\"\""
+    devices:
+      - /dev/kfd
+      - /dev/dri
     ulimits:
       memlock:
         soft: -1

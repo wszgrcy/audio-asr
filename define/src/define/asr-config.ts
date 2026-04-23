@@ -48,7 +48,10 @@ export const TranslateConfigDefine = v.object({
   ),
 });
 export const AudioConfigDefine = v.object({
-  baseURL: v.pipe(STR_DEFINE, v.title('地址')),
+  baseURL: v.pipe(
+    v.optional(STR_DEFINE, 'http://whisper:8080'),
+    v.title('地址'),
+  ),
   apiKey: v.pipe(v.optional(STR_DEFINE), v.title('apiKey')),
   model: v.pipe(
     v.optional(STR_DEFINE, AsrModelList[0].value),
