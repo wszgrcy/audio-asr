@@ -1,6 +1,6 @@
 {
   "name": "cyia-web-template",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "init": "npm run build:dev -w define && npm run init -w server",
     "build:dev": "npm run build:dev -ws --if-present",
