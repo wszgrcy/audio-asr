@@ -127,6 +127,7 @@ builder
     targets: Platform.WINDOWS.createTarget(),
     config: options,
     projectDir: path.join(process.cwd(), 'dist'),
+    publish: 'never',
   })
   .then((result) => {
     console.log(JSON.stringify(result));
