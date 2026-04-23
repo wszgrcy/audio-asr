@@ -1,6 +1,6 @@
 {
   "name": "cyia-web-template",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "init": "npm run build:dev -w define && npm run init -w server",
     "build:dev": "npm run build:dev -ws --if-present",
@@ -10,8 +10,7 @@
     "test:mcp": "npx @modelcontextprotocol/inspector",
     "build:website:prod": "npm run build -w define && npm run build -w website",
     "build:server:prod": "npm run build -w define && npm run build -w server",
-    "build": "tsx ./script/docker-build.ts",
-    "release": "tsx ./script/release.ts"
+    "build": "tsx ./script/docker-build.ts"
   },
   "packageManager": "pnpm@10.28.2",
   "workspaces": [
