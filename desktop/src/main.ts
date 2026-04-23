@@ -34,7 +34,7 @@ import { MediaParseService } from './app/service/media-parse.service';
 
 import { ConnectStoreService } from './app/service/connect.store';
 import { DbChangeService } from './app/service/db-change.service';
-
+console.log(process.env.NODE_ENV)
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),

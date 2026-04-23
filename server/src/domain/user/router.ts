@@ -25,7 +25,7 @@ export const UserRouter = router({
       )
       .limit(1)
       .then((list) => {
-        return list[0].config;
+        return list[0]?.config;
       });
   }),
   syncConfig: VerifyProcedure.input(v.any()).mutation(
