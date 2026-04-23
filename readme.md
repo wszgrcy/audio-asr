@@ -90,11 +90,12 @@ cd C:\whisper-deploy
 
 ### 3. 配置环境变量
 
-复制 `.env.example` 并编辑 `.env` 文件，配置以下关键参数：
+复制 `.env` 并编辑 `.env` 文件，配置以下关键参数：
 
 ```env
-# 认证配置
+# openssl rand -base64 32
 BETTER_AUTH_SECRET=your-secret-key
+# 暂时用不到
 BETTER_AUTH_URL=http://your-domain:port
 
 # 初始密码
