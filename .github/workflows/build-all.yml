@@ -157,9 +157,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Print github.ref_type
-              run: |
-                  echo "ref_type: ${{ github.ref_type }}"
+
             - name: Checkout repository
               uses: actions/checkout@v6
 
@@ -190,5 +188,3 @@ jobs:
                   push: true
                   tags: ${{ steps.meta.outputs.tags }}
                   labels: ${{ steps.meta.outputs.labels }}
-
-
