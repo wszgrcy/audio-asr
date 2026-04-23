@@ -11,6 +11,7 @@ export async function main() {
 
   const isWatch = process.argv.includes('--watch');
   const isProd = process.argv.includes('--prod');
+  let dev = isProd ? 'production' : 'dev';
   const options: esbuild.SameShape<esbuild.BuildOptions, esbuild.BuildOptions> =
     {
       absWorkingDir: workspaceDir,
@@ -67,6 +68,7 @@ export async function main() {
         SERVE: `${isWatch}`,
         'process.env.WORK_PLATFORM': `'client'`,
         'process.platform': `'${process.platform}'`,
+        'process.env.NODE_ENV': `'${dev}'`,
       },
       alias: {
         '@angular/core': 'static-injector',
