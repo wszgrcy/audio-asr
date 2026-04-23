@@ -26,7 +26,7 @@ async function createWindow(): Promise<BrowserWindow> {
       webSecurity: !SERVE,
       preload,
       // 暂时打开,稳定再关闭
-      devTools: true,
+      devTools: process.env.NODE_ENV === 'dev',
     },
   });
   win.webContents.session.setSpellCheckerDictionaryDownloadURL(
