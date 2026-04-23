@@ -10,7 +10,7 @@ services:
     volumes:
       - ./data:/var/lib/postgresql
   server:
-    image: ghcr.io/wszgrcy/audio-server:1.0.0
+    image: ghcr.io/wszgrcy/audio-server:1.0.17
     restart: unless-stopped
     depends_on:
       - db
@@ -18,6 +18,8 @@ services:
       - .env
     volumes:
       - ./status:/app/.status
+    ports:
+      - 3000:3000
   whisper:
     image: ghcr.io/ggml-org/whisper.cpp:main-cuda
     container_name: whisper
