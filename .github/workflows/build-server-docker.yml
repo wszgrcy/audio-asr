@@ -7,16 +7,18 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ghcr.io/${{github.actor}}/audio-server
-
+permissions:
+  contents: read
+  packages: write
+  # id-token: write
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
 
     steps:
+      - name: Print github.ref_type
+        run: |
+          echo "ref_type: ${{ github.ref_type }}"
       - name: Checkout repository
         uses: actions/checkout@v6
 
@@ -27,8 +29,8 @@ jobs:
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          # username: ${{ github.actor }}
+          # password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Extract metadata for Docker
         id: meta
