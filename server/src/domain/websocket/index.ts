@@ -6,6 +6,7 @@ import { db } from '../../db';
 import { asrEntity } from '@project/define';
 import { and, eq, not } from 'drizzle-orm';
 import { fromNodeHeaders } from 'better-auth/node';
+import { $localize } from '@cyia/localize';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -39,7 +40,7 @@ export function websocketRoutes(
         },
       });
       if (!result) {
-        throw new Error('验证失败');
+        throw new Error($localize`验证失败`);
       } else {
         req.userId = result.user.id;
       }

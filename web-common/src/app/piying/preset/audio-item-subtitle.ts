@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import { ActivatedRoute } from '@angular/router';
 import { NFCSchema } from '@piying/view-angular-core';
 import { safeDefine } from '../define';
@@ -40,13 +41,13 @@ export const AudioDeviceItemSubtitle = v.pipe(
                   };
                   return [
                     {
-                      title: '源字幕',
+                      title: $localize`源字幕`,
                       async clicked(event, item) {
                         fn({ origin: true });
                       },
                     },
                     {
-                      title: '翻译字幕',
+                      title: $localize`翻译字幕`,
                       async clicked(event, item) {
                         fn({ translate: true });
                       },

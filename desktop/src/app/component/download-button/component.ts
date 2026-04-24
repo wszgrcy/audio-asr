@@ -12,6 +12,7 @@ import {
   ErrorDownloadMessage,
 } from '../progress/const';
 import { trpcClient } from '../../trpc-client';
+import { $localize } from '@cyia/localize';
 @Component({
   selector: 'download-button',
   templateUrl: './component.html',
@@ -21,7 +22,7 @@ import { trpcClient } from '../../trpc-client';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DownloadButtonFCC {
-  label = input('下载');
+  label = input($localize`下载`);
   fileList = input<
     { url: string; dir?: string | undefined; fileName?: string | undefined }[]
   >([]);

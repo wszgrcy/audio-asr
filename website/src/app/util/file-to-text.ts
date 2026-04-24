@@ -1,3 +1,5 @@
+import { $localize } from '@cyia/localize';
+
 export function readFileAsText(file: File) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -7,7 +9,7 @@ export function readFileAsText(file: File) {
     };
 
     reader.onerror = () => {
-      reject(reader.error || new Error('读取文件失败'));
+      reject(reader.error || new Error($localize`读取文件失败`));
     };
 
     reader.readAsText(file);

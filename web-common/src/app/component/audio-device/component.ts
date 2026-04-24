@@ -31,6 +31,7 @@ import {
   setComponent,
 } from '@piying/view-angular-core';
 import { AudioDataService } from '../../service/audio/audio-router.service';
+import { $localize } from '@cyia/localize';
 @Component({
   selector: 'audio-device',
   templateUrl: './component.html',
@@ -65,10 +66,10 @@ export class AudioDeviceComponent {
   workingHint$$ = computed(() => {
     const list = [];
     if (this.input.start$()) {
-      list.push('麦克风');
+      list.push($localize`麦克风`);
     }
     if (this.output.start$()) {
-      list.push('扬声器');
+      list.push($localize`扬声器`);
     }
     if (list.length) {
       return `${list.join('/')}工作中`;
@@ -98,7 +99,7 @@ export class AudioDeviceComponent {
     const savedItem = this.dataService.current$$().list$$();
     const index = savedItem.findIndex((chunkItem) => chunkItem.id === item.id);
     const ref = await this.#confirm.open({
-      title: `归档${index + 1}项`,
+      title: $localize`归档${index + 1}项`,
       schema: v.pipe(
         v.object({
           __range: v.pipe(
@@ -107,17 +108,17 @@ export class AudioDeviceComponent {
             actions.inputs.patch({
               content: `${dayjs(savedItem[0].range![0]).format('YYYY-MM-DD HH:mm')}->${dayjs(savedItem[index].range![1]).format('YYYY-MM-DD HH:mm')}`,
             }),
-            v.title('时间范围'),
+            v.title($localize`时间范围`),
             actions.wrappers.patch(['label-wrapper']),
             actions.props.patch({ labelPosition: 'top' }),
           ),
-          title: v.pipe(v.string(), v.title(`归档标题`)),
+          title: v.pipe(v.string(), v.title($localize`归档标题`)),
         }),
 
         asVirtualGroup(),
         setComponent('object'),
       ),
-      value: { title: `[归档]${getFileTimestamp()}` },
+      value: { title: $localize`[📦]${getFileTimestamp()}` },
       injector: this.#injector,
       async applyValue(value) {
         return value;

@@ -11,6 +11,7 @@ import { DbConfig } from '../../../config';
 import { apiKey } from '@better-auth/api-key';
 import { electron } from '@better-auth/electron';
 import { bearer } from 'better-auth/plugins';
+import { $localize } from '@cyia/localize';
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -64,7 +65,7 @@ export const auth = betterAuth({
       organizationHooks: {
         beforeRemoveMember: async ({ user, member, organization }) => {
           // 除了用户被删除外,应该禁止移除
-          throw new Error('禁止');
+          throw new Error($localize`禁止`);
         },
       },
       allowUserToCreateOrganization: async (user) => {

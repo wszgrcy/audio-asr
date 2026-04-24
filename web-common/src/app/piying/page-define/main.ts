@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import { NFCSchema, setComponent } from '@piying/view-angular-core';
 import { actions } from '@piying/view-angular';
@@ -153,21 +154,21 @@ export const TabsPage = v.pipe(
       actions.inputs.patch({
         list: [
           {
-            title: '操作',
+            title: $localize`操作`,
             router: { routerLink: ['home'] },
             icon: {
               fontIcon: 'add',
             },
           },
           {
-            title: '列表',
+            title: $localize`列表`,
             router: { routerLink: ['list'] },
             icon: {
               fontIcon: 'list',
             },
           },
           {
-            title: '配置',
+            title: $localize`配置`,
             router: { routerLink: ['globalConfig'] },
             icon: {
               fontIcon: 'settings',

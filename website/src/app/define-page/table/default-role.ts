@@ -1,5 +1,8 @@
 import * as v from 'valibot';
 import {
+  $localize,
+} from '@cyia/localize';
+import {
   formConfig,
   NFCSchema,
   setAlias,
@@ -19,7 +22,7 @@ import { omitBy } from 'es-toolkit';
 const NewRoleDefine = v.object({
   role: v.pipe(
     v.string(),
-    v.title('角色'),
+    v.title($localize`角色`),
     actions.props.patch({
       labelPosition: 'top',
     }),
@@ -62,7 +65,7 @@ const NewRoleDefine = v.object({
       disableAdd: true,
       disableRemove: true,
     }),
-    v.title('权限'),
+    v.title($localize`权限`),
     actions.wrappers.set(['label-wrapper', 'validate-tooltip-wrapper']),
   ),
 });
@@ -201,7 +204,7 @@ export const DefaultRolePageDefine = v.pipe(
                           return async () => {
                             const item = field.context['item$']();
                             field.injector.get(DialogService).openDialog({
-                              title: '更新角色',
+                              title: $localize`更新角色`,
                               schema: NewRoleDefine,
                               value: {
                                 role: item.role,
@@ -289,7 +292,7 @@ export const DefaultRolePageDefine = v.pipe(
             clicked: (field) => {
               return () => {
                 field.injector.get(DialogService).openDialog({
-                  title: '添加角色',
+                  title: $localize`添加角色`,
                   schema: NewRoleDefine,
                   value: {
                     permission: Object.keys(OrgPermissionDefine).reduce(

@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import {
   actions,
@@ -26,7 +27,7 @@ export const ConnectConfig = v.pipe(
     ),
     serverUrl: v.pipe(
       v.optional(v.string(), '127.0.0.1:3000'),
-      v.title('地址'),
+      v.title($localize`地址`),
       actions.class.top('flex-1'),
       safeDefine.setComponent('string', (actions) => {
         return [
@@ -54,7 +55,7 @@ export const LoginConfig = v.pipe(
         ];
       }),
       // actions.wrappers.set(['label-wrapper']),
-      v.title('邮箱'),
+      v.title($localize`邮箱`),
       actions.class.component('w-full'),
       // actions.wrappers.patch(['item']),
     ),
@@ -62,7 +63,7 @@ export const LoginConfig = v.pipe(
       v.string(),
       v.minLength(8),
       actions.wrappers.set(['label-wrapper']),
-      v.title('密码'),
+      v.title($localize`密码`),
       actions.class.component('w-full'),
       // actions.wrappers.patch(['item']),
       safeDefine.setComponent('password', (actions) => {
@@ -97,7 +98,7 @@ export const LoginPage = v.pipe(
           actions.attributes.patch({ type: 'submit' }),
           actions.class.bottom('btn-block'),
           actions.inputs.patch({
-            content: '登录',
+            content: $localize`登录`,
             color: 'primary',
           }),
           actions.inputs.patchAsync({

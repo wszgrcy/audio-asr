@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import { Routes } from '@angular/router';
 
 import { GlobalConfigDefine } from '@desktop/define';
@@ -23,7 +24,7 @@ CRoutes[2].children![4].children![2].data = {
             center: v.pipe(
               NFCSchema,
               safeDefine.setComponent('common-data', (actions) => {
-                return [actions.inputs.patch({ content: '配置' })];
+                return [actions.inputs.patch({ content: $localize`配置` })];
               }),
             ),
           }),
@@ -36,7 +37,7 @@ CRoutes[2].children![4].children![2].data = {
           safeDefine.setComponent('button', (actions) => {
             return [
               actions.inputs.patch({
-                content: '退出',
+                content: $localize`退出`,
                 color: 'error',
                 shape: 'block',
               }),

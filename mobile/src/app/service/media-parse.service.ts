@@ -3,6 +3,7 @@ import { asrEntity } from '@@ref/define';
 import { eq } from 'drizzle-orm';
 import { db$$, RemoteService } from '@@web-common';
 import { FFmpegService } from './ffmpeg.service';
+import { $localize } from '@cyia/localize';
 
 @Injectable({ providedIn: 'root' })
 export class MediaParseService {
@@ -22,7 +23,7 @@ export class MediaParseService {
     formData.set('init', JSON.stringify(result));
     formData.set('file', file);
     try {
-      console.log('准备请求', result);
+      console.log($localize`准备请求`, result);
       return await (
         await this.#remote.trpcClient$$()
       ).fileAudio.parse.mutate(formData);

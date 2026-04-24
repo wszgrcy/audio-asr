@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import { inject, Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastService } from '@piying-lib/angular-daisyui/overlay';
@@ -43,7 +44,7 @@ export class LoginService implements ILoginService {
     } catch (error) {
       console.error('Login error:', error);
       this.toastService.add({
-        message: '登录过程中发生错误，请稍后重试',
+        message: $localize`登录过程中发生错误，请稍后重试`,
       });
     }
   }
@@ -58,7 +59,7 @@ export class LoginService implements ILoginService {
     } catch (error) {
       console.error('Sign out error:', error);
       this.toastService.add({
-        message: '退出过程中发生错误，请稍后重试',
+        message: $localize`退出过程中发生错误，请稍后重试`,
       });
     }
   }

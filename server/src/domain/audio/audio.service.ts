@@ -19,6 +19,7 @@ import {
   TranslateConfigToken,
 } from './translation.service';
 import { inject, InjectionToken, Injector } from 'static-injector';
+import { $localize } from '@cyia/localize';
 interface AudioChunk {
   id: string;
   buffer: Buffer;
@@ -95,17 +96,17 @@ export class Child {
               response_format: 'json',
               language: this.#config.config.audio.language,
             });
-            console.log('用时', performance.now() - start);
+            console.log($localize`用时`, performance.now() - start);
             return instance;
           }),
           catchError((err) => {
-            console.error('音频转文本失败:', err);
+            console.error($localize`音频转文本失败:`, err);
             this.#config.callback({
               type: 'error',
               value: {
                 id: input.id,
                 error: {
-                  message: `音频转文本失败：${err instanceof Error ? err.message : String(err)}`,
+                  message: $localize`音频转文本失败：${err instanceof Error ? err.message : String(err)}`,
                   code: err instanceof Error ? err.name : undefined,
                   details: err,
                 },
@@ -155,13 +156,13 @@ export class Child {
                       value: {
                         id: undefined, // 翻译错误可能不关联特定的 chunk
                         error: {
-                          message: `翻译失败：${error instanceof Error ? error.message : String(error)}`,
+                          message: $localize`翻译失败：${error instanceof Error ? error.message : String(error)}`,
                           code: error instanceof Error ? error.name : undefined,
                           details: error,
                         },
                       },
                     });
-                    console.error('翻译任务失败:', error);
+                    console.error($localize`翻译任务失败:`, error);
                   }
                 },
               ),

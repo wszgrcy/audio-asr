@@ -2,6 +2,7 @@ import { FastifyPluginCallback } from 'fastify';
 import { Injector } from 'static-injector';
 import { helloRoutes } from './hello';
 import { auth } from '@@domain/auth/auth';
+import { $localize } from '@cyia/localize';
 declare module 'fastify' {
   interface FastifyRequest {
     userId?: string;
@@ -12,12 +13,12 @@ export function openRoutes(injector: () => Injector): FastifyPluginCallback {
     instance.decorateRequest('userId', undefined);
     instance.addHook('onRequest', async (req) => {
       if (!req.headers.authorization) {
-        throw new Error('无效的apiky');
+        throw new Error($localize`无效的apiky`);
       }
       const apikey = req.headers.authorization.slice(`Bearer `.length);
       const list = req.routeOptions.url!.slice('/open/'.length).split('/');
       if (list.length !== 2) {
-        throw new Error('地址请求错误');
+        throw new Error($localize`地址请求错误`);
       }
       const data = await auth.api.verifyApiKey({
         body: {

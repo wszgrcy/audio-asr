@@ -19,6 +19,7 @@ import { authClient } from '../../service/auth.service';
 import { UserWithRole } from 'better-auth/plugins';
 import { dateToStr } from '../../util/time';
 import { DefaultRoleService } from '../../service/default-role.service';
+import { $localize } from '@cyia/localize';
 
 const UpdateRoleDefine = v.pipe(
   v.object({
@@ -174,7 +175,7 @@ export const UserPageDefine = v.pipe(
                           return async () => {
                             const item = field.context['item$']();
                             field.injector.get(DialogService).openDialog({
-                              title: '设置角色',
+                              title: $localize`设置角色`,
                               schema: UpdateRoleDefine,
                               value: {
                                 role:

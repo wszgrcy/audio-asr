@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import { actions, asVirtualGroup, NFCSchema } from '@piying/view-angular-core';
 
@@ -17,7 +18,7 @@ export const GlobalConfigDefine = v.pipe(
         center: v.pipe(
           NFCSchema,
           safeDefine.setComponent('common-data', (actions) => {
-            return [actions.inputs.patch({ content: '配置' })];
+            return [actions.inputs.patch({ content: $localize`配置` })];
           }),
 
           // todo 点击后菜单
@@ -36,7 +37,7 @@ export const GlobalConfigDefine = v.pipe(
               safeDefine.setComponent('button', (actions) => {
                 return [
                   actions.inputs.patch({
-                    content: '退出',
+                    content: $localize`退出`,
                     color: 'error',
                     shape: 'block',
                   }),

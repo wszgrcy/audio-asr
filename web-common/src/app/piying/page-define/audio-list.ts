@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import { NFCSchema, setComponent } from '@piying/view-angular-core';
 import { actions } from '@piying/view-angular';
@@ -16,7 +17,7 @@ export const AudioListPage = v.pipe(
         center: v.pipe(
           NFCSchema,
           safeDefine.setComponent('common-data', (actions) => {
-            return [actions.inputs.patch({ content: '数据列表' })];
+            return [actions.inputs.patch({ content: $localize`数据列表` })];
           }),
         ),
         end: v.pipe(

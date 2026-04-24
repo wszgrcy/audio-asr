@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import { asControl } from '@piying/valibot-visit';
 import { actions, disableWhen, setComponent } from '@piying/view-angular-core';
@@ -12,12 +13,12 @@ export const ASRType = v.picklist([
 ]);
 export const Range = v.optional(v.tuple([v.number(), v.number()]));
 
-const AsrModelList = [{ label: 'whisper', value: 'whisper' }];
+const AsrModelList = [{ label: $localize`whisper`, value: 'whisper' }];
 
 export const TranslateConfigValueDefine = v.object({
-  baseURL: v.pipe(STR_DEFINE, v.title('地址')),
+  baseURL: v.pipe(STR_DEFINE, v.title($localize`地址`)),
   apiKey: v.pipe(v.optional(STR_DEFINE), v.title('apiKey')),
-  model: v.pipe(STR_DEFINE, v.title('模型')),
+  model: v.pipe(STR_DEFINE, v.title($localize`模型`)),
   target: v.pipe(
     v.optional(v.array(STR_DEFINE)),
     asControl(),
@@ -28,14 +29,14 @@ export const TranslateConfigValueDefine = v.object({
         return { label: item.zh, value: item.value };
       }),
     }),
-    v.title('翻译为'),
+    v.title($localize`翻译为`),
   ),
 });
 export type TranslateConfigValueType = v.InferOutput<
   typeof TranslateConfigValueDefine
 >;
 export const TranslateConfigDefine = v.object({
-  enable: v.pipe(v.optional(v.boolean(), false), v.title('自动翻译')),
+  enable: v.pipe(v.optional(v.boolean(), false), v.title($localize`自动翻译`)),
   value: v.pipe(
     v.optional(TranslateConfigValueDefine),
     disableWhen({
@@ -50,7 +51,7 @@ export const TranslateConfigDefine = v.object({
 export const AudioConfigDefine = v.object({
   baseURL: v.pipe(
     v.optional(STR_DEFINE, 'http://whisper:8080/v1'),
-    v.title('地址'),
+    v.title($localize`地址`),
   ),
   apiKey: v.pipe(v.optional(STR_DEFINE), v.title('apiKey')),
   model: v.pipe(
@@ -60,7 +61,7 @@ export const AudioConfigDefine = v.object({
     //   options: AsrModelList,
     // }),
 
-    v.title('模型'),
+    v.title($localize`模型`),
   ),
   language: v.pipe(
     v.optional(STR_DEFINE, LanguageList[0].value),
@@ -70,7 +71,7 @@ export const AudioConfigDefine = v.object({
         return { label: item.zh, value: item.value };
       }),
     }),
-    v.title('音频语言'),
+    v.title($localize`音频语言`),
   ),
 });
 export const AudioToTextDefine = v.object({
@@ -80,13 +81,13 @@ export const AudioToTextDefine = v.object({
 export const DeviceInputOutputDefine = v.object({
   input: v.pipe(
     v.optional(AudioToTextDefine),
-    v.title('麦克风'),
+    v.title($localize`麦克风`),
     actions.wrappers.patch(['fieldset']),
     actions.class.top('bg-base-200 border-base-300 rounded-box border p-4'),
   ),
   output: v.pipe(
     v.optional(AudioToTextDefine),
-    v.title('扬声器'),
+    v.title($localize`扬声器`),
     actions.wrappers.patch(['fieldset']),
     actions.class.top('bg-base-200 border-base-300 rounded-box border p-4'),
   ),
@@ -100,18 +101,18 @@ export const DeviceConfigDefine = v.object({
 export const StreamPartDefine = v.object({
   timeChunk: v.pipe(
     v.optional(v.number(), 0.2),
-    v.title('时间切片(秒)'),
-    v.description('每隔多长时间发送一次数据'),
+    v.title($localize`时间切片(秒)`),
+    v.description($localize`每隔多长时间发送一次数据`),
   ),
   redemptionMs: v.pipe(
     v.optional(v.number(), 600),
-    v.title('静音容忍(毫秒)'),
-    v.description('检测到静音多长算一句话'),
+    v.title($localize`静音容忍(毫秒)`),
+    v.description($localize`检测到静音多长算一句话`),
   ),
   maxSplitTime: v.pipe(
     v.optional(v.number(), 5),
-    v.title('最大分割时间(秒)'),
-    v.description('一句话最大的持续时间'),
+    v.title($localize`最大分割时间(秒)`),
+    v.description($localize`一句话最大的持续时间`),
   ),
 });
 export const StreamAudioConfig = v.intersect([
@@ -124,7 +125,7 @@ export type StreamChunkItemOutputType = v.InferOutput<typeof StreamAudioConfig>;
 export const FilePartDefine = v.object({
   filePath: v.pipe(
     v.string(),
-    v.title('文件'),
+    v.title($localize`文件`),
     actions.wrappers.patch(['file-input']),
     actions.props.patchAsync({
       clicked: (field) => () => {

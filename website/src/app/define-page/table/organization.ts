@@ -15,6 +15,7 @@ import { SuperUserService } from '../../service/super.service';
 import { Organization, UserWithRole } from 'better-auth/plugins';
 import { dateInRange, dateToStr } from '../../util/time';
 import { TableResourceService } from '@piying-lib/angular-daisyui/extension';
+import { $localize } from '@cyia/localize';
 
 const FilterCondition = v.pipe(
   v.object({
@@ -219,7 +220,7 @@ export const OrganizationPageDefine = v.pipe(
                   name: 'test',
                   slug: 'test1',
                 });
-                console.warn('添加测试');
+                console.warn($localize`添加测试`);
                 field.injector.get(TableResourceService).needUpdate();
               };
             },
