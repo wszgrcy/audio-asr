@@ -144,6 +144,9 @@ docker-compose down
 - **账号**：`admin@admin.com`
 - **密码**：`ADMIN_PASSWORD` 环境变量中配置的密码（默认为 `12345678`）
 
+### android手机版本要求
+- 如果要进行外放音频录制,那么应该在android 10及以上
+- 手机webview版本应当在120以上才能更好的获得支持,低于此版本需要手动升级webview
 ---
 
 ## 目录结构说明
