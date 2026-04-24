@@ -95,8 +95,8 @@ export class FileAudioService {
                   try {
                     const translatedText = await translationService.translate(
                       item.origin,
-                      language,
                       audioConfig.audio.language!,
+                      language,
                     );
                     subject.next({
                       type: 'translate',
