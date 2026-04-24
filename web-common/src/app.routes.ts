@@ -13,8 +13,10 @@ import {
   AudioListPage,
 } from './app/piying';
 import { ConnectStoreToken } from './app/token';
+import { ComponentDefineToken } from './app/token/component.define.torken';
 
 const defaultOptions = () => {
+  let safeDefine=inject(ComponentDefineToken)
   return {
     fieldGlobalConfig: safeDefine.define,
   };

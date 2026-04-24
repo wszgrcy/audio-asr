@@ -25,7 +25,7 @@ const ffmpegConfg = v.object({
         execPath: v.pipe(
           v.optional(
             v.string(),
-            './ffmpeg-n8.0-latest-win64-gpl-8.0/bin/ffmpeg.exe',
+            './ffmpeg-n8.1-latest-win64-gpl-8.1/bin/ffmpeg.exe',
           ),
           v.title('执行路径'),
         ),

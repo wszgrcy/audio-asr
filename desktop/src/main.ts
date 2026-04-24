@@ -24,6 +24,7 @@ import {
   ConnectStoreToken,
   DbChangeToken,
   DbService,
+  ComponentDefineToken,
 } from '@@web-common';
 import { DatabaseInitCheckService } from './app/service/database-init-check.service';
 import { SaveFileService } from './app/service/save-file.service';
@@ -34,7 +35,8 @@ import { MediaParseService } from './app/service/media-parse.service';
 
 import { ConnectStoreService } from './app/service/connect.store';
 import { DbChangeService } from './app/service/db-change.service';
-console.log(process.env.NODE_ENV)
+import { safeDefine } from './app/piying/define';
+console.log(process.env.NODE_ENV);
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
@@ -51,6 +53,7 @@ bootstrapApplication(AppComponent, {
     { provide: MediaParseToken, useClass: MediaParseService },
     { provide: ConnectStoreToken, useClass: ConnectStoreService },
     { provide: DbChangeToken, useClass: DbChangeService },
+    { provide: ComponentDefineToken, useValue: safeDefine },
     provideEnvironmentInitializer(() => {
       const db = inject(DbService);
       db.version$.subscribe(() => {

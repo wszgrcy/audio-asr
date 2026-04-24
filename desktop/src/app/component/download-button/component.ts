@@ -4,7 +4,6 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ProgressComponent } from '../progress/component';
 import {
@@ -17,7 +16,7 @@ import { trpcClient } from '../../trpc-client';
   selector: 'download-button',
   templateUrl: './component.html',
   standalone: true,
-  imports: [ProgressComponent, MatTooltipModule],
+  imports: [ProgressComponent],
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

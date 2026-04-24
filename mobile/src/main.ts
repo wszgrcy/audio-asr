@@ -29,6 +29,7 @@ import {
   TokenStoreToken,
   AudioOutputService,
   DbService,
+  ComponentDefineToken,
 } from '@@web-common';
 import { RemoteService } from './app/remote/remote.service';
 import { DatabaseInitCheckService } from './app/service/database-init-check.service';
@@ -38,6 +39,7 @@ import { MediaParseService } from './app/service/media-parse.service';
 import { ConnectStoreService } from './app/remote/connect.service';
 import { TokenStoreService } from './app/remote/token-store.service';
 import { AudioOutputCapactiorService } from './app/service/audio-output.service.capactior';
+import { safeDefine } from './app/piying/define';
 console.log(process.env.WORK_PLATFORM);
 
 bootstrapApplication(AppComponent, {
@@ -59,6 +61,8 @@ bootstrapApplication(AppComponent, {
     (process.platform as any) === 'webview'
       ? { provide: AudioOutputService, useClass: AudioOutputCapactiorService }
       : [],
+    { provide: ComponentDefineToken, useValue: safeDefine },
+
     provideEnvironmentInitializer(() => {
       let db = inject(DbService);
       db.version$.subscribe(() => {

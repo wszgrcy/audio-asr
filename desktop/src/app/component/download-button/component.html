@@ -4,12 +4,10 @@
       {{ label() }}
     </button>
     <button
-      class="btn btn-circle"
       color="primary"
       (click)="openDir()"
       [disabled]="!dir()"
-      [matTooltipDisabled]="!dir()"
-      [matTooltip]="'打开' + dir()"
+      class="btn btn-circle tooltip tooltip-left" [attr.data-tip]="'打开' + dir()"
     >
       <span class="material-icons">folder</span>
     </button>

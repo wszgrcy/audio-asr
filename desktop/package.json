@@ -114,6 +114,7 @@
     "@angular/build": ">=0.1.0",
     "@angular/cli": ">=0.1.0",
     "@angular/compiler-cli": ">=0.1.0",
-    "@angular/language-service": ">=0.1.0"
+    "@angular/language-service": ">=0.1.0",
+    "strtok3": ">=0.1.0"
   }
 }

@@ -127,9 +127,12 @@ export class Child {
         });
         if (isEnd) {
           ref.unsubscribe();
-          if (this.#config.config.translate.enable) {
+          if (
+            this.#config.config.translate.enable &&
+            this.#config.config.translate.value
+          ) {
             await Promise.all(
-              this.#config.config.translate.value!.target.map(
+              (this.#config.config.translate.value!.target ?? []).map(
                 async (language) => {
                   try {
                     const result = await this.#translateService.translate(

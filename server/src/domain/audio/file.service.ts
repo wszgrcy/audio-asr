@@ -72,10 +72,8 @@ export class FileAudioService {
           // text start end
           transcription.segments!;
           if (audioConfig.translate.enable && audioConfig.translate.value) {
-            const targetLanguages = audioConfig.translate.value.target;
-            if (!targetLanguages) {
-              return;
-            }
+            const targetLanguages = audioConfig.translate.value.target ?? [];
+
             const translationService = Injector.create({
               providers: [
                 OpenAITranslationService,
