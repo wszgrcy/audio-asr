@@ -9,7 +9,8 @@
   "main": "./main.mjs",
   "private": true,
   "dependencies": {
-    "@reflink/reflink": "0.1.19"
+    "@reflink/reflink": "0.1.19",
+    "strtok3": "10.3.5"
   },
   "devDependencies": {
     "electron": "41.2.1"
