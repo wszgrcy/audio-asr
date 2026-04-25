@@ -12,6 +12,7 @@ import { DefaultConfigDir } from '../const';
 import * as fs from 'fs';
 import { isTruthy } from '@@web-common/common';
 import path from 'path';
+import { $localize } from '@cyia/localize';
 
 export const FsRouter = t.router({
   readFileContent: t.procedure
@@ -127,7 +128,7 @@ export const FsRouter = t.router({
               });
             }
           } catch (rej) {
-            log?.info(`下载失败`);
+            log?.info($localize`下载失败`);
             log?.info(rej);
             ob.error(rej);
           } finally {

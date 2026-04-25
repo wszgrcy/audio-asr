@@ -1,4 +1,5 @@
 import { computed, untracked } from '@angular/core';
+import { $localize } from '@cyia/localize';
 import { CommonSelectOptions } from '@piying-lib/angular-core';
 import { FormDialogService } from '@piying-lib/angular-daisyui/overlay';
 import { actions, FieldControl, setComponent } from '@piying/view-angular-core';
@@ -60,9 +61,9 @@ export const DialogSelectActions = [
                   setComponent('radio'),
                   actions.inputs.patch({ options: options }),
                 ),
-            title: field.props()['title'] ?? `选择`,
+            title: field.props()['title'] ?? $localize`选择`,
             injector: field.injector,
-            cancelButton: '取消',
+            cancelButton: $localize`取消`,
           });
           if (result === undefined) {
             return;

@@ -22,7 +22,7 @@ async function main() {
       'process.env.NODE_ENV': `'${ENV}'`,
     },
     packages: isProd ? 'bundle' : 'external',
-    inject: [path.join(__dirname, './cjs-shim.ts')],
+    inject: [path.join(__dirname, './cjs-shim.ts'), path.join(__dirname, './load.node.ts')],
     minify: isProd,
     sourcemap: !isProd,
     legalComments: 'external',
@@ -30,13 +30,21 @@ async function main() {
       '@angular/core': 'static-injector',
     },
   };
-  await build(options, async () => {
-    console.log('准备运行');
-
+  await build(options, async (watch) => {
     const { $ } = await import('execa');
-    $({ stdio: 'inherit' })(
-      `node --env-file=.env.${ENV} --inspect --watch ./dist/main.mjs`,
-    );
+    await $({ stdio: 'inherit', cwd: path.join(process.cwd(), '..') })('i18n', [
+      'merge-convert',
+      path.join(OUT_DIR,'i18n'),
+      './server/i18n',
+      './define/i18n',
+    ]);
+
+    if (watch) {
+      console.log('准备运行');
+      $({ stdio: 'inherit' })(
+        `node --env-file=.env.${ENV} --inspect --watch ./dist/main.mjs`,
+      );
+    }
     // todo 0xC000013A
   });
 }

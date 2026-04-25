@@ -53,6 +53,7 @@ export async function build(
   } else {
     let result = await esbuild.build(options);
     console.log('[build]构建完成');
+    await fn?.(watch);
   }
   // await Promise.all([esbuild.build(options), $(`tsc`, ['-p', isPublish ? 'tsconfig.type-prod.json' : 'tsconfig.type.json'])]);
 }

@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import { TRPCError, initTRPC } from '@trpc/server';
 import { ContextType } from '../type/trpc.type';
 // import { LoggerService } from './domain/logger/logger.service';
@@ -25,7 +26,7 @@ export const VerifyMiddleware = middleware(async ({ ctx, path, next }) => {
     headers: fromNodeHeaders(headers),
   });
   if (!data) {
-    throw new TRPCError({ code: 'UNAUTHORIZED', message: '没有登录' });
+    throw new TRPCError({ code: 'UNAUTHORIZED', message: $localize`没有登录` });
   }
   return next({ ctx: { user: data.user } });
 });

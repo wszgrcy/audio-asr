@@ -1,0 +1,899 @@
+{
+  "2850915276258775161": {
+    "id": "2850915276258775161",
+    "text": "whisper",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "whisper"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 15,
+        "column": 31
+      },
+      "end": {
+        "line": 15,
+        "column": 49
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "whisper"
+  },
+  "5469377262532830686": {
+    "id": "5469377262532830686",
+    "text": "地址",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "地址"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 53,
+        "column": 12
+      },
+      "end": {
+        "line": 53,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "地址"
+  },
+  "8842552653363886423": {
+    "id": "8842552653363886423",
+    "text": "模型",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "模型"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 63,
+        "column": 12
+      },
+      "end": {
+        "line": 63,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "模型"
+  },
+  "3536383829496849177": {
+    "id": "3536383829496849177",
+    "text": "翻译为",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "翻译为"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 31,
+        "column": 12
+      },
+      "end": {
+        "line": 31,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "翻译为"
+  },
+  "8307386956232611765": {
+    "id": "8307386956232611765",
+    "text": "自动翻译",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "自动翻译"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 38,
+        "column": 57
+      },
+      "end": {
+        "line": 38,
+        "column": 72
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "自动翻译"
+  },
+  "1688195532779227021": {
+    "id": "1688195532779227021",
+    "text": "音频语言",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频语言"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 73,
+        "column": 12
+      },
+      "end": {
+        "line": 73,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "音频语言"
+  },
+  "2579861371871490284": {
+    "id": "2579861371871490284",
+    "text": "麦克风",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "麦克风"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 83,
+        "column": 12
+      },
+      "end": {
+        "line": 83,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "麦克风"
+  },
+  "1377656604392190900": {
+    "id": "1377656604392190900",
+    "text": "扬声器",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "扬声器"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 89,
+        "column": 12
+      },
+      "end": {
+        "line": 89,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "扬声器"
+  },
+  "1474613737276258964": {
+    "id": "1474613737276258964",
+    "text": "时间切片(秒)",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "时间切片(秒)"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 103,
+        "column": 12
+      },
+      "end": {
+        "line": 103,
+        "column": 30
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "时间切片(秒)"
+  },
+  "4926685248723929087": {
+    "id": "4926685248723929087",
+    "text": "每隔多长时间发送一次数据",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "每隔多长时间发送一次数据"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 104,
+        "column": 18
+      },
+      "end": {
+        "line": 104,
+        "column": 41
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "每隔多长时间发送一次数据"
+  },
+  "233972688112432857": {
+    "id": "233972688112432857",
+    "text": "静音容忍(毫秒)",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "静音容忍(毫秒)"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 108,
+        "column": 12
+      },
+      "end": {
+        "line": 108,
+        "column": 31
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "静音容忍(毫秒)"
+  },
+  "6418833808451248276": {
+    "id": "6418833808451248276",
+    "text": "检测到静音多长算一句话",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "检测到静音多长算一句话"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 109,
+        "column": 18
+      },
+      "end": {
+        "line": 109,
+        "column": 40
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "检测到静音多长算一句话"
+  },
+  "5006697596057580944": {
+    "id": "5006697596057580944",
+    "text": "最大分割时间(秒)",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "最大分割时间(秒)"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 113,
+        "column": 12
+      },
+      "end": {
+        "line": 113,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "最大分割时间(秒)"
+  },
+  "2301330141199524630": {
+    "id": "2301330141199524630",
+    "text": "一句话最大的持续时间",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "一句话最大的持续时间"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 114,
+        "column": 18
+      },
+      "end": {
+        "line": 114,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "一句话最大的持续时间"
+  },
+  "6559518521237634474": {
+    "id": "6559518521237634474",
+    "text": "文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 127,
+        "column": 12
+      },
+      "end": {
+        "line": 127,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\asr-config.ts"
+    },
+    "target": "文件"
+  },
+  "8642386229079428733": {
+    "id": "8642386229079428733",
+    "text": "默认音频配置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "默认音频配置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 8,
+        "column": 12
+      },
+      "end": {
+        "line": 8,
+        "column": 29
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\common-global.config.ts"
+    },
+    "target": "默认音频配置"
+  },
+  "7426699062456126197": {
+    "id": "7426699062456126197",
+    "text": "默认翻译配置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "默认翻译配置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 15,
+        "column": 12
+      },
+      "end": {
+        "line": 15,
+        "column": 29
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\define\\common-global.config.ts"
+    },
+    "target": "默认翻译配置"
+  },
+  "5096497232087854174": {
+    "id": "5096497232087854174",
+    "text": "等于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "等于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 11
+      },
+      "end": {
+        "line": 20,
+        "column": 24
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "等于"
+  },
+  "5766139435516750367": {
+    "id": "5766139435516750367",
+    "text": "不等于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "不等于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 21,
+        "column": 11
+      },
+      "end": {
+        "line": 21,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "不等于"
+  },
+  "4201953048167275106": {
+    "id": "4201953048167275106",
+    "text": "小于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "小于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 11
+      },
+      "end": {
+        "line": 22,
+        "column": 24
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "小于"
+  },
+  "5130882204697091708": {
+    "id": "5130882204697091708",
+    "text": "大于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "大于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 23,
+        "column": 11
+      },
+      "end": {
+        "line": 23,
+        "column": 24
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "大于"
+  },
+  "2638209559888949997": {
+    "id": "2638209559888949997",
+    "text": "小于或等于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "小于或等于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 24,
+        "column": 11
+      },
+      "end": {
+        "line": 24,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "小于或等于"
+  },
+  "6922582720632613983": {
+    "id": "6922582720632613983",
+    "text": "大于或等于",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "大于或等于"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 25,
+        "column": 11
+      },
+      "end": {
+        "line": 25,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "大于或等于"
+  },
+  "5972541658035953740": {
+    "id": "5972541658035953740",
+    "text": "包含",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "包含"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 26,
+        "column": 11
+      },
+      "end": {
+        "line": 26,
+        "column": 24
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "包含"
+  },
+  "8161067217780048091": {
+    "id": "8161067217780048091",
+    "text": "开头是",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "开头是"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 27,
+        "column": 11
+      },
+      "end": {
+        "line": 27,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "开头是"
+  },
+  "8756658639367709731": {
+    "id": "8756658639367709731",
+    "text": "结尾是",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "结尾是"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 28,
+        "column": 11
+      },
+      "end": {
+        "line": 28,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "结尾是"
+  },
+  "573345925225660": {
+    "id": "573345925225660",
+    "text": "不包含",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "不包含"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 29,
+        "column": 11
+      },
+      "end": {
+        "line": 29,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "不包含"
+  },
+  "6290218618288066391": {
+    "id": "6290218618288066391",
+    "text": "开头不是",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "开头不是"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 30,
+        "column": 11
+      },
+      "end": {
+        "line": 30,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "开头不是"
+  },
+  "8183723755101692957": {
+    "id": "8183723755101692957",
+    "text": "结尾不是",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "结尾不是"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 31,
+        "column": 11
+      },
+      "end": {
+        "line": 31,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "结尾不是"
+  },
+  "8656040486125376717": {
+    "id": "8656040486125376717",
+    "text": "为空",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "为空"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 32,
+        "column": 11
+      },
+      "end": {
+        "line": 32,
+        "column": 24
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "为空"
+  },
+  "4334067311166770257": {
+    "id": "4334067311166770257",
+    "text": "不为空",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "不为空"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 33,
+        "column": 11
+      },
+      "end": {
+        "line": 33,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "不为空"
+  },
+  "2376174727300004800": {
+    "id": "2376174727300004800",
+    "text": "在列表中",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "在列表中"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 34,
+        "column": 11
+      },
+      "end": {
+        "line": 34,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "在列表中"
+  },
+  "1156250350964898058": {
+    "id": "1156250350964898058",
+    "text": "不在列表中",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "不在列表中"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 35,
+        "column": 11
+      },
+      "end": {
+        "line": 35,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "不在列表中"
+  },
+  "5871675608046189465": {
+    "id": "5871675608046189465",
+    "text": "在范围内",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "在范围内"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 36,
+        "column": 11
+      },
+      "end": {
+        "line": 36,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "在范围内"
+  },
+  "6662127520982802131": {
+    "id": "6662127520982802131",
+    "text": "不在范围内",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "不在范围内"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 37,
+        "column": 11
+      },
+      "end": {
+        "line": 37,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "不在范围内"
+  },
+  "9217263702364020329": {
+    "id": "9217263702364020329",
+    "text": "可选",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "可选"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 51,
+        "column": 14
+      },
+      "end": {
+        "line": 51,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "可选"
+  },
+  "2344538038273120081": {
+    "id": "2344538038273120081",
+    "text": "字段",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "字段"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 64,
+        "column": 14
+      },
+      "end": {
+        "line": 64,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "字段"
+  },
+  "4598807855377930954": {
+    "id": "4598807855377930954",
+    "text": "操作符",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "操作符"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 88,
+        "column": 14
+      },
+      "end": {
+        "line": 88,
+        "column": 28
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "操作符"
+  },
+  "6981227828840639514": {
+    "id": "6981227828840639514",
+    "text": "值",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "值"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 128,
+        "column": 14
+      },
+      "end": {
+        "line": 128,
+        "column": 26
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\define\\src\\query-builder\\query-build.ts"
+    },
+    "target": "值"
+  }
+}

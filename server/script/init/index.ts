@@ -6,6 +6,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { auth } from '../auth/auth';
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
+import { $localize } from '@cyia/localize';
 /** 运行时初始化 */
 export async function initSet() {
   const status = path.join(process.cwd(), '.status');
@@ -15,7 +16,7 @@ export async function initSet() {
 
   await fs.promises.mkdir(status, { recursive: true });
   if (fs.existsSync(initedPath)) {
-    console.log(`存在 ${initedPath} 跳过初始化`);
+    console.log($localize`存在 ${initedPath} 跳过初始化`);
     return;
   }
   await migrate(db, { migrationsFolder: './drizzle-sql' });
@@ -51,7 +52,7 @@ export async function initSet() {
     headers: headers,
   });
   if (result.total === 1) {
-    console.log('用户创建成功');
+    console.log($localize`用户创建成功`);
   } else {
     throw new Error('admin list error');
   }
@@ -65,7 +66,7 @@ export async function initSet() {
     headers,
   });
   if (result4.total === 1) {
-    console.log('组织创建成功');
+    console.log($localize`组织创建成功`);
   }
   await fs.promises.writeFile(initedPath, '');
 }

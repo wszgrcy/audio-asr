@@ -1,0 +1,428 @@
+{
+  "3684414589149876730": {
+    "id": "3684414589149876730",
+    "text": "准备初始化",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "准备初始化"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 4,
+        "column": 14
+      },
+      "end": {
+        "line": 4,
+        "column": 30
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\script\\init.prod.ts"
+    },
+    "target": "准备初始化"
+  },
+  "4363578775784722744": {
+    "id": "4363578775784722744",
+    "text": "运行环境",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "运行环境"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 3,
+        "column": 12
+      },
+      "end": {
+        "line": 3,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\main.ts"
+    },
+    "target": "运行环境"
+  },
+  "5961745978189100076": {
+    "id": "5961745978189100076",
+    "text": "存在 {$PH} 跳过初始化",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "存在 ",
+      " 跳过初始化"
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 18,
+        "column": 16
+      },
+      "end": {
+        "line": 18,
+        "column": 49
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\script\\init\\index.ts"
+    },
+    "target": "存在 {$PH} 跳过初始化"
+  },
+  "2496351710390654540": {
+    "id": "2496351710390654540",
+    "text": "用户创建成功",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "用户创建成功"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 54,
+        "column": 16
+      },
+      "end": {
+        "line": 54,
+        "column": 33
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\script\\init\\index.ts"
+    },
+    "target": "用户创建成功"
+  },
+  "1398154930720834397": {
+    "id": "1398154930720834397",
+    "text": "组织创建成功",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "组织创建成功"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 68,
+        "column": 16
+      },
+      "end": {
+        "line": 68,
+        "column": 33
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\script\\init\\index.ts"
+    },
+    "target": "组织创建成功"
+  },
+  "4030221777776334075": {
+    "id": "4030221777776334075",
+    "text": "没有登录",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "没有登录"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 28,
+        "column": 57
+      },
+      "end": {
+        "line": 28,
+        "column": 72
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\router\\router.ts"
+    },
+    "target": "没有登录"
+  },
+  "5887834829583747053": {
+    "id": "5887834829583747053",
+    "text": "禁止",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "禁止"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 67,
+        "column": 26
+      },
+      "end": {
+        "line": 67,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\auth\\auth.ts"
+    },
+    "target": "禁止"
+  },
+  "7925538382697945898": {
+    "id": "7925538382697945898",
+    "text": "用时",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "用时"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 98,
+        "column": 24
+      },
+      "end": {
+        "line": 98,
+        "column": 37
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\audio\\audio.service.ts"
+    },
+    "target": "用时"
+  },
+  "8965877982655216557": {
+    "id": "8965877982655216557",
+    "text": "音频转文本失败:",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频转文本失败:"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 102,
+        "column": 26
+      },
+      "end": {
+        "line": 102,
+        "column": 45
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\audio\\audio.service.ts"
+    },
+    "target": "音频转文本失败:"
+  },
+  "2350023910611159182": {
+    "id": "2350023910611159182",
+    "text": "音频转文本失败：{$PH}",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频转文本失败：",
+      ""
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 108,
+        "column": 27
+      },
+      "end": {
+        "line": 108,
+        "column": 97
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\audio\\audio.service.ts"
+    },
+    "target": "音频转文本失败：{$PH}"
+  },
+  "4381809407305945910": {
+    "id": "4381809407305945910",
+    "text": "翻译失败：{$PH}",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "翻译失败：",
+      ""
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 158,
+        "column": 35
+      },
+      "end": {
+        "line": 158,
+        "column": 108
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\audio\\audio.service.ts"
+    },
+    "target": "翻译失败：{$PH}"
+  },
+  "2558290146015390017": {
+    "id": "2558290146015390017",
+    "text": "翻译任务失败:",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "翻译任务失败:"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 164,
+        "column": 34
+      },
+      "end": {
+        "line": 164,
+        "column": 52
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\audio\\audio.service.ts"
+    },
+    "target": "翻译任务失败:"
+  },
+  "2093260239416304977": {
+    "id": "2093260239416304977",
+    "text": "账户登录失败",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "账户登录失败"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 6,
+        "column": 11
+      },
+      "end": {
+        "line": 6,
+        "column": 28
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\error\\error.ts"
+    },
+    "target": "账户登录失败"
+  },
+  "2863680687800600939": {
+    "id": "2863680687800600939",
+    "text": "鉴权失败-{$PH}",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "鉴权失败-",
+      ""
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 11,
+        "column": 13
+      },
+      "end": {
+        "line": 11,
+        "column": 36
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\error\\error.ts"
+    },
+    "target": "鉴权失败-{$PH}"
+  },
+  "8407058240689000882": {
+    "id": "8407058240689000882",
+    "text": "动作查询越界",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "动作查询越界"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 15,
+        "column": 11
+      },
+      "end": {
+        "line": 15,
+        "column": 28
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\error\\error.ts"
+    },
+    "target": "动作查询越界"
+  },
+  "4243880777467940253": {
+    "id": "4243880777467940253",
+    "text": "无效的apiky",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "无效的apiky"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 15,
+        "column": 24
+      },
+      "end": {
+        "line": 15,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\open\\index.ts"
+    },
+    "target": "无效的apiky"
+  },
+  "1639678784679826446": {
+    "id": "1639678784679826446",
+    "text": "地址请求错误",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "地址请求错误"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 24
+      },
+      "end": {
+        "line": 20,
+        "column": 41
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\open\\index.ts"
+    },
+    "target": "地址请求错误"
+  },
+  "8142088961919576480": {
+    "id": "8142088961919576480",
+    "text": "验证失败",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "验证失败"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 42,
+        "column": 24
+      },
+      "end": {
+        "line": 42,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\server\\src\\domain\\websocket\\index.ts"
+    },
+    "target": "验证失败"
+  }
+}

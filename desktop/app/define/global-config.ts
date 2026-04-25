@@ -3,6 +3,7 @@ import { actions, NFCSchema, setComponent } from '@piying/view-angular-core';
 import { map } from 'rxjs';
 
 import { CommonConfigDefine } from '@@ref/define/src/define/common-global.config';
+import { $localize } from '@cyia/localize';
 const ffmpegConfg = v.object({
   ffmpeg: v.pipe(
     v.optional(
@@ -13,21 +14,21 @@ const ffmpegConfg = v.object({
             v.string(),
             `https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-win64-gpl-8.1.zip`,
           ),
-          v.title('ffmpeg下载地址'),
+          v.title($localize`ffmpeg下载地址`),
           v.description(
-            `linux下使用: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz`,
+            $localize`linux下使用: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz`,
           ),
         ),
         dir: v.pipe(
           v.optional(v.string(), './plugin/tts/ffmpeg'),
-          v.title('保存文件夹'),
+          v.title($localize`保存文件夹`),
         ),
         execPath: v.pipe(
           v.optional(
             v.string(),
             './ffmpeg-n8.1-latest-win64-gpl-8.1/bin/ffmpeg.exe',
           ),
-          v.title('执行路径'),
+          v.title($localize`执行路径`),
         ),
         __download: v.pipe(
           NFCSchema,

@@ -1,6 +1,7 @@
 import { createRootInjector } from 'static-injector';
 import { AppService } from './app.service';
-console.log('运行环境', process.env.NODE_ENV);
+import { $localize, loadTranslations } from '@cyia/localize';
+console.log($localize`运行环境`, process.env.NODE_ENV);
 process.env.TZ = 'utc';
 const injector = createRootInjector({
   providers: [AppService],

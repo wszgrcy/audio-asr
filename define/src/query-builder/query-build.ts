@@ -1,4 +1,7 @@
 import {
+  $localize,
+} from '@cyia/localize';
+import {
   actions,
   asVirtualGroup,
   FieldLogicGroup,
@@ -15,25 +18,25 @@ import { QueryBuilderService } from './query-builder.service';
 import { computed } from '@angular/core';
 import { isUndefined } from 'es-toolkit';
 const opList = [
-  { label: '=', value: '=' },
-  { label: '!=', value: '!=' },
-  { label: '<', value: '<' },
-  { label: '>', value: '>' },
-  { label: '<=', value: '<=' },
-  { label: '>=', value: '>=' },
-  { label: 'contains', value: 'contains' },
-  { label: 'begins with', value: 'beginsWith' },
-  { label: 'ends with', value: 'endsWith' },
-  { label: 'does not contain', value: 'doesNotContain' },
-  { label: 'does not begin with', value: 'doesNotBeginWith' },
-  { label: 'does not end with', value: 'doesNotEndWith' },
-  { label: 'is null', value: 'null', valueCount: 0 },
-  { label: 'is not null', value: 'notNull', valueCount: 0 },
-  { label: 'in', value: 'in' },
-  { label: 'not in', value: 'notIn' },
-  { label: 'between', value: 'between', valueCount: 2 },
-  { label: 'not between', value: 'notBetween', valueCount: 2 },
-];
+  { label: $localize`等于`, value: '=' },
+  { label: $localize`不等于`, value: '!=' },
+  { label: $localize`小于`, value: '<' },
+  { label: $localize`大于`, value: '>' },
+  { label: $localize`小于或等于`, value: '<=' },
+  { label: $localize`大于或等于`, value: '>=' },
+  { label: $localize`包含`, value: 'contains' },
+  { label: $localize`开头是`, value: 'beginsWith' },
+  { label: $localize`结尾是`, value: 'endsWith' },
+  { label: $localize`不包含`, value: 'doesNotContain' },
+  { label: $localize`开头不是`, value: 'doesNotBeginWith' },
+  { label: $localize`结尾不是`, value: 'doesNotEndWith' },
+  { label: $localize`为空`, value: 'null', valueCount: 0 },
+  { label: $localize`不为空`, value: 'notNull', valueCount: 0 },
+  { label: $localize`在列表中`, value: 'in' },
+  { label: $localize`不在列表中`, value: 'notIn' },
+  { label: $localize`在范围内`, value: 'between', valueCount: 2 },
+  { label: $localize`不在范围内`, value: 'notBetween', valueCount: 2 },
+]
 const opMap = opList.reduce(
   (obj, item) => {
     obj[item.value] = item.valueCount ?? 1;
@@ -46,7 +49,7 @@ export const RuleDefine = v.pipe(
   v.object({
     optional: v.pipe(
       v.optional(v.boolean(), true),
-      v.title('可选'),
+      v.title($localize`可选`),
       actions.props.patch({
         labelPosition: 'top',
       }),
@@ -59,7 +62,7 @@ export const RuleDefine = v.pipe(
     field: v.pipe(
       v.optional(v.string()),
       setComponent('select'),
-      v.title('字段'),
+      v.title($localize`字段`),
       actions.props.patch({
         labelPosition: 'top',
       }),
@@ -83,7 +86,7 @@ export const RuleDefine = v.pipe(
           return opList;
         },
       }),
-      v.title('操作符'),
+      v.title($localize`操作符`),
       actions.props.patch({
         labelPosition: 'top',
       }),
@@ -123,7 +126,7 @@ export const RuleDefine = v.pipe(
         ]),
       ),
       formConfig({ emptyValue: [] }),
-      v.title('值'),
+      v.title($localize`值`),
       actions.wrappers.set(['label-wrapper']),
       actions.props.patch({
         labelPosition: 'top',

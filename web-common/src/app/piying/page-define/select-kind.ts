@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import { formConfig, NFCSchema } from '@piying/view-angular-core';
 import { actions } from '@piying/view-angular';
@@ -47,7 +48,7 @@ export const SelectKindPage = v.pipe(
         center: v.pipe(
           NFCSchema,
           safeDefine.setComponent('common-data', (actions) => {
-            return [actions.inputs.patch({ content: '选择处理' })];
+           return [actions.inputs.patch({ content: $localize`选择处理` })];
           }),
 
           // todo 点击后菜单
@@ -63,7 +64,7 @@ export const SelectKindPage = v.pipe(
           safeDefine.setComponent('button', (actions) => {
             return [
               actions.inputs.patch({
-                content: { title: '使用上次设备', icon: { fontIcon: 'mic' } },
+                content: { title: $localize`使用上次设备`, icon: { fontIcon: 'mic' } },
                 color: 'secondary',
                 size: 'lg',
               }),
@@ -94,7 +95,7 @@ export const SelectKindPage = v.pipe(
           safeDefine.setComponent('button', (actions) => {
             return [
               actions.inputs.patch({
-                content: { title: '使用设备', icon: { fontIcon: 'mic' } },
+                content: { title: $localize`使用设备`, icon: { fontIcon: 'mic' } },
                 color: 'primary',
                 size: 'lg',
               }),
@@ -110,9 +111,9 @@ export const SelectKindPage = v.pipe(
                     const config = await configService.getConfig$$();
                     const result = await formDialog.open({
                       class: 'page-form-dialog',
-                      title: '设置参数',
+                      title: $localize`设置参数`,
                       schema: StreamAudioConfig,
-                      cancelButton: '取消',
+                      cancelButton: $localize`取消`,
                       value: {
                         device: {
                           input: {
@@ -153,7 +154,7 @@ export const SelectKindPage = v.pipe(
             return [
               actions.inputs.patch({
                 content: {
-                  title: '本地文件',
+                  title: $localize`本地文件`,
                   icon: { fontIcon: 'attach_file' },
                 },
                 size: 'lg',
@@ -169,7 +170,7 @@ export const SelectKindPage = v.pipe(
                       .get(FormDialogService)
                       .open({
                         class: 'page-form-dialog',
-                        cancelButton: '取消',
+                       cancelButton: $localize`取消`,
                         injector: field.injector,
                         schema: v.pipe(
                           v.intersect([
@@ -215,7 +216,7 @@ export const SelectKindPage = v.pipe(
                                   ),
                                 ),
                               }),
-                              v.title('文件路径'),
+                              v.title($localize`文件路径`),
 
                               actions.wrappers.patch([
                                 'label-wrapper',
@@ -232,7 +233,7 @@ export const SelectKindPage = v.pipe(
                           ]),
                         ),
 
-                        title: '设置',
+                        title: $localize`设置`,
                         value: {
                           file: {
                             audio: config.defaultAudioConfig,
@@ -289,7 +290,7 @@ export const SelectKindPage = v.pipe(
             return [
               actions.inputs.patch({
                 content: {
-                  title: '字幕文件',
+                  title: $localize`字幕文件`,
                   icon: { fontIcon: 'subtitles' },
                 },
                 size: 'lg',
@@ -305,7 +306,7 @@ export const SelectKindPage = v.pipe(
                       .get(FormDialogService)
                       .open({
                         class: 'page-form-dialog',
-                        cancelButton: '取消',
+                       cancelButton: $localize`取消`,
                         injector: field.injector,
                         // 文件设置需要用本地的
                         schema: v.pipe(

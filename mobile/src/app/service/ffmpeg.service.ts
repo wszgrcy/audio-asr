@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { $localize } from '@cyia/localize';
 import { FFmpeg, LogEventCallback } from '@ffmpeg/ffmpeg';
 import { toBlobURL } from '@ffmpeg/util';
 @Injectable({
@@ -68,7 +69,7 @@ export class FFmpegService {
       'output.wav',
     ]);
     if (result !== 0) {
-      throw new Error('转换失败');
+      throw new Error($localize`转换失败`);
     }
     const fileData = await ffmpeg.readFile('output.wav');
     await ffmpeg.deleteFile('input');

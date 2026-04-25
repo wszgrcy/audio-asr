@@ -1,3 +1,4 @@
+import { $localize } from '@cyia/localize';
 import * as v from 'valibot';
 import {
   actions,
@@ -13,14 +14,14 @@ export const LoginDefine = v.pipe(
       v.string(),
       v.email(),
       actions.wrappers.set(['label-wrapper']),
-      v.title('邮箱'),
+      v.title($localize`邮箱`),
       actions.class.component('w-full'),
     ),
     password: v.pipe(
       v.string(),
       v.minLength(8),
       actions.wrappers.set(['label-wrapper']),
-      v.title('密码'),
+      v.title($localize`密码`),
       actions.class.component('w-full'),
       setComponent('password'),
     ),
@@ -31,7 +32,7 @@ export const LoginDefine = v.pipe(
             NFCSchema,
             setComponent('button'),
             actions.inputs.patch({
-              content: '注册',
+              content: $localize`注册`,
               color: 'accent',
             }),
             actions.inputs.patchAsync({
@@ -46,7 +47,7 @@ export const LoginDefine = v.pipe(
             NFCSchema,
             setComponent('button'),
             actions.inputs.patch({
-              content: '登录',
+              content: $localize`登录`,
               color: 'primary',
             }),
             actions.attributes.patch({ type: 'submit' }),

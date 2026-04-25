@@ -1,3 +1,4 @@
-export const StartDownloadMessage = { message: '开始下载' };
+import { $localize } from '@cyia/localize';
+export const StartDownloadMessage = { message: $localize`开始下载` };
 export const EndDownloadMessage = { type: 'end' };
 export const ErrorDownloadMessage = { type: 'error' };

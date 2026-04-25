@@ -7,26 +7,27 @@ import {
 } from '@piying/view-angular-core';
 import { AuthService } from '../service/auth.service';
 import { map } from 'rxjs';
+import { $localize } from '@cyia/localize';
 export const RegisterDefine = v.pipe(
   v.object({
     email: v.pipe(
       v.string(),
       v.email(),
       actions.wrappers.set(['label-wrapper']),
-      v.title('邮箱'),
+      v.title($localize`邮箱`),
       actions.class.component('w-full'),
     ),
     name: v.pipe(
       v.string(),
       actions.wrappers.set(['label-wrapper']),
-      v.title('用户名'),
+      v.title($localize`用户名`),
       actions.class.component('w-full'),
     ),
     password1: v.pipe(
       v.string(),
       v.minLength(8),
       actions.wrappers.set(['label-wrapper']),
-      v.title('密码'),
+      v.title($localize`密码`),
       actions.class.component('w-full'),
       setComponent('password'),
     ),
@@ -34,7 +35,7 @@ export const RegisterDefine = v.pipe(
       v.string(),
       v.minLength(8),
       actions.wrappers.set(['label-wrapper']),
-      v.title('确认密码'),
+      v.title($localize`确认密码`),
       actions.class.component('w-full'),
       setComponent('password'),
     ),
@@ -45,7 +46,7 @@ export const RegisterDefine = v.pipe(
             NFCSchema,
             setComponent('button'),
             actions.inputs.patch({
-              content: '注册',
+              content: $localize`注册`,
               color: 'accent',
             }),
             actions.attributes.patch({
