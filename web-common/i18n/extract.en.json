@@ -1,0 +1,606 @@
+{
+  "2579861371871490284": {
+    "id": "2579861371871490284",
+    "text": "麦克风",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "麦克风"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 68,
+        "column": 16
+      },
+      "end": {
+        "line": 68,
+        "column": 30
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "Microphone"
+  },
+  "1377656604392190900": {
+    "id": "1377656604392190900",
+    "text": "扬声器",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "扬声器"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 71,
+        "column": 16
+      },
+      "end": {
+        "line": 71,
+        "column": 30
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "Speaker"
+  },
+  "6249116752616169304": {
+    "id": "6249116752616169304",
+    "text": "归档{$PH}项",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "归档",
+      "项"
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 101,
+        "column": 13
+      },
+      "end": {
+        "line": 101,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "Archive {$PH} items"
+  },
+  "579141273686668828": {
+    "id": "579141273686668828",
+    "text": "时间范围",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "时间范围"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 110,
+        "column": 20
+      },
+      "end": {
+        "line": 110,
+        "column": 35
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "Time Range"
+  },
+  "848132726064407831": {
+    "id": "848132726064407831",
+    "text": "归档标题",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "归档标题"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 114,
+        "column": 44
+      },
+      "end": {
+        "line": 114,
+        "column": 59
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "Archive Title"
+  },
+  "8652861719331240829": {
+    "id": "8652861719331240829",
+    "text": "[📦]{$PH}",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "[📦]",
+      ""
+    ],
+    "placeholderNames": [
+      "PH"
+    ],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 120,
+        "column": 22
+      },
+      "end": {
+        "line": 120,
+        "column": 58
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\component\\audio-device\\component.ts"
+    },
+    "target": "[📦]{$PH}"
+  },
+  "7254786940121109848": {
+    "id": "7254786940121109848",
+    "text": "数据列表",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "数据列表"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 19,
+        "column": 52
+      },
+      "end": {
+        "line": 19,
+        "column": 67
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\audio-list.ts"
+    },
+    "target": "Data List"
+  },
+  "5469377262532830686": {
+    "id": "5469377262532830686",
+    "text": "地址",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "地址"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 29,
+        "column": 14
+      },
+      "end": {
+        "line": 29,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\login.ts"
+    },
+    "target": "Address"
+  },
+  "9115505226015911600": {
+    "id": "9115505226015911600",
+    "text": "邮箱",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "邮箱"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 57,
+        "column": 14
+      },
+      "end": {
+        "line": 57,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\login.ts"
+    },
+    "target": "Email"
+  },
+  "6971624281171557374": {
+    "id": "6971624281171557374",
+    "text": "密码",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "密码"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 65,
+        "column": 14
+      },
+      "end": {
+        "line": 65,
+        "column": 27
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\login.ts"
+    },
+    "target": "Password"
+  },
+  "1496302481389750951": {
+    "id": "1496302481389750951",
+    "text": "登录",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "登录"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 100,
+        "column": 21
+      },
+      "end": {
+        "line": 100,
+        "column": 34
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\login.ts"
+    },
+    "target": "Log in"
+  },
+  "2261171107170127222": {
+    "id": "2261171107170127222",
+    "text": "操作",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "操作"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 156,
+        "column": 19
+      },
+      "end": {
+        "line": 156,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "Actions"
+  },
+  "9163643160442172711": {
+    "id": "9163643160442172711",
+    "text": "列表",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "列表"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 163,
+        "column": 19
+      },
+      "end": {
+        "line": 163,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "List"
+  },
+  "948914772096209323": {
+    "id": "948914772096209323",
+    "text": "配置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "配置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 170,
+        "column": 19
+      },
+      "end": {
+        "line": 170,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "Configuration"
+  },
+  "4629123866844707512": {
+    "id": "4629123866844707512",
+    "text": "选择处理",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "选择处理"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 50,
+        "column": 51
+      },
+      "end": {
+        "line": 50,
+        "column": 66
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Select handling"
+  },
+  "4651885835279592961": {
+    "id": "4651885835279592961",
+    "text": "使用上次设备",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "使用上次设备"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 66,
+        "column": 34
+      },
+      "end": {
+        "line": 66,
+        "column": 51
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Use Last Device"
+  },
+  "975915704753926860": {
+    "id": "975915704753926860",
+    "text": "使用设备",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "使用设备"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 97,
+        "column": 34
+      },
+      "end": {
+        "line": 97,
+        "column": 49
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Use Device"
+  },
+  "3903729213855554845": {
+    "id": "3903729213855554845",
+    "text": "设置参数",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "设置参数"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 113,
+        "column": 29
+      },
+      "end": {
+        "line": 113,
+        "column": 44
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Configure Parameters"
+  },
+  "5601254587589034652": {
+    "id": "5601254587589034652",
+    "text": "取消",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "取消"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 65,
+        "column": 26
+      },
+      "end": {
+        "line": 65,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\preset\\dialog-select-actions.ts"
+    },
+    "target": "Cancel"
+  },
+  "4348888876274124404": {
+    "id": "4348888876274124404",
+    "text": "本地文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "本地文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 156,
+        "column": 25
+      },
+      "end": {
+        "line": 156,
+        "column": 40
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Local File"
+  },
+  "757660266435129076": {
+    "id": "757660266435129076",
+    "text": "文件路径",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "文件路径"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 218,
+        "column": 38
+      },
+      "end": {
+        "line": 218,
+        "column": 53
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "File path"
+  },
+  "1133636729557061267": {
+    "id": "1133636729557061267",
+    "text": "设置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "设置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 235,
+        "column": 31
+      },
+      "end": {
+        "line": 235,
+        "column": 44
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Settings"
+  },
+  "6905498098366367337": {
+    "id": "6905498098366367337",
+    "text": "字幕文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "字幕文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 292,
+        "column": 25
+      },
+      "end": {
+        "line": 292,
+        "column": 40
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\page-define\\select-kind.ts"
+    },
+    "target": "Subtitle file"
+  },
+  "3229518575826373355": {
+    "id": "3229518575826373355",
+    "text": "源字幕",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "源字幕"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 43,
+        "column": 29
+      },
+      "end": {
+        "line": 43,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\preset\\audio-item-subtitle.ts"
+    },
+    "target": "Original Subtitles"
+  },
+  "7363741267020064891": {
+    "id": "7363741267020064891",
+    "text": "翻译字幕",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "翻译字幕"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 49,
+        "column": 29
+      },
+      "end": {
+        "line": 49,
+        "column": 44
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\preset\\audio-item-subtitle.ts"
+    },
+    "target": "Translate subtitles"
+  },
+  "5857273842178092539": {
+    "id": "5857273842178092539",
+    "text": "选择",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "选择"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 63,
+        "column": 45
+      },
+      "end": {
+        "line": 63,
+        "column": 58
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\web-common\\src\\app\\piying\\preset\\dialog-select-actions.ts"
+    },
+    "target": "Select"
+  }
+}

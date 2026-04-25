@@ -1,0 +1,416 @@
+{
+  "948914772096209323": {
+    "id": "948914772096209323",
+    "text": "配置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "配置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 173,
+        "column": 19
+      },
+      "end": {
+        "line": 173,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "Configuration"
+  },
+  "4311277299278710073": {
+    "id": "4311277299278710073",
+    "text": "退出",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "退出"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 39,
+        "column": 25
+      },
+      "end": {
+        "line": 39,
+        "column": 38
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app.routes.ts"
+    },
+    "target": "Log out"
+  },
+  "5619347184969876836": {
+    "id": "5619347184969876836",
+    "text": "ffmpeg下载地址",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "ffmpeg下载地址"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 16,
+        "column": 18
+      },
+      "end": {
+        "line": 16,
+        "column": 39
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\define\\global-config.ts"
+    },
+    "target": "FFmpeg download URL"
+  },
+  "7098691193417187948": {
+    "id": "7098691193417187948",
+    "text": "linux下使用: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "linux下使用: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 18,
+        "column": 12
+      },
+      "end": {
+        "line": 18,
+        "column": 137
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\define\\global-config.ts"
+    },
+    "target": "Use on Linux: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz"
+  },
+  "2147993331574186165": {
+    "id": "2147993331574186165",
+    "text": "保存文件夹",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "保存文件夹"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 23,
+        "column": 18
+      },
+      "end": {
+        "line": 23,
+        "column": 34
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\define\\global-config.ts"
+    },
+    "target": "Save folder"
+  },
+  "3003117720718412635": {
+    "id": "3003117720718412635",
+    "text": "执行路径",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "执行路径"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 30,
+        "column": 18
+      },
+      "end": {
+        "line": 30,
+        "column": 33
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\define\\global-config.ts"
+    },
+    "target": "Execution Path"
+  },
+  "6435535039353658352": {
+    "id": "6435535039353658352",
+    "text": "准备请求",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "准备请求"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 20
+      },
+      "end": {
+        "line": 20,
+        "column": 35
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\router\\audio-file.router.ts"
+    },
+    "target": "Preparing request"
+  },
+  "471599729001897575": {
+    "id": "471599729001897575",
+    "text": "下载失败",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "下载失败"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 130,
+        "column": 22
+      },
+      "end": {
+        "line": 130,
+        "column": 37
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\app\\router\\fs.router.ts"
+    },
+    "target": "Download failed"
+  },
+  "8956561068478955823": {
+    "id": "8956561068478955823",
+    "text": "音频文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 3,
+        "column": 8
+      },
+      "end": {
+        "line": 3,
+        "column": 23
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "Audio file"
+  },
+  "7030558723587737074": {
+    "id": "7030558723587737074",
+    "text": "视频文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "视频文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 7,
+        "column": 8
+      },
+      "end": {
+        "line": 7,
+        "column": 23
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "Video File"
+  },
+  "3188626662885701190": {
+    "id": "3188626662885701190",
+    "text": "音频和视频文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频和视频文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 12,
+        "column": 10
+      },
+      "end": {
+        "line": 12,
+        "column": 28
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "Audio and video files"
+  },
+  "3258612316193787540": {
+    "id": "3258612316193787540",
+    "text": "字幕",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "字幕"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 25,
+        "column": 12
+      },
+      "end": {
+        "line": 25,
+        "column": 25
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "Subtitle"
+  },
+  "7162156863641033358": {
+    "id": "7162156863641033358",
+    "text": "登录过程中发生错误，请稍后重试",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "登录过程中发生错误，请稍后重试"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 46,
+        "column": 17
+      },
+      "end": {
+        "line": 46,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\login.service.ts"
+    },
+    "target": "An error occurred during login. Please try again later."
+  },
+  "7673911978668330207": {
+    "id": "7673911978668330207",
+    "text": "退出过程中发生错误，请稍后重试",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "退出过程中发生错误，请稍后重试"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 61,
+        "column": 17
+      },
+      "end": {
+        "line": 61,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\service\\login.service.ts"
+    },
+    "target": "An error occurred during sign-out. Please try again later."
+  },
+  "5274782702841254401": {
+    "id": "5274782702841254401",
+    "text": "下载",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "下载"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 24,
+        "column": 16
+      },
+      "end": {
+        "line": 24,
+        "column": 29
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\component\\download-button\\component.ts"
+    },
+    "target": "Download"
+  },
+  "648296287520763907": {
+    "id": "648296287520763907",
+    "text": "开始下载",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "开始下载"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 47
+      },
+      "end": {
+        "line": 1,
+        "column": 62
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\component\\progress\\const.ts"
+    },
+    "target": "Start download"
+  },
+  "2261171107170127222": {
+    "id": "2261171107170127222",
+    "text": "操作",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "操作"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 159,
+        "column": 19
+      },
+      "end": {
+        "line": 159,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "Action"
+  },
+  "9163643160442172711": {
+    "id": "9163643160442172711",
+    "text": "列表",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "列表"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 166,
+        "column": 19
+      },
+      "end": {
+        "line": 166,
+        "column": 32
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\desktop\\src\\app\\piying\\page-define\\main.ts"
+    },
+    "target": "List"
+  }
+}

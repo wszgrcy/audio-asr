@@ -5,10 +5,11 @@
   "description": "An Ionic project",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build:dev": "ng build --configuration development-android",
-    "build": "ng build --configuration production-android",
-    "watch": "ng build --watch --configuration development",
+    "build:i18n": "i18n merge-convert ./i18n-assets ./i18n ../web-common/i18n ../define/i18n ../server/i18n",
+    "start": "npm run build:i18n && ng serve",
+    "build:dev": "npm run build:i18n && ng build --configuration development-android",
+    "build": "npm run build:i18n && ng build --configuration production-android",
+    "watch": "npm run build:i18n && ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
     "init:android": "cap add android",
@@ -42,8 +43,7 @@
     "patch-package": "^8.0.1",
     "prettier": "^3.8.1",
     "srt-parser-2": "^1.2.3",
-    "uuid": "^13.0.0",
-    "zone.js": "~0.15.0"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@angular-eslint/builder": "^21.3.1",
@@ -78,6 +78,20 @@
     "@electric-sql/pglite": ">=0.1.0",
     "@piying-lib/angular-core": ">=0.1.0",
     "@piying-lib/angular-daisyui": ">=0.1.0",
-    "tslib": ">=0.1.0"
+    "tslib": ">=0.1.0",
+    "@angular/animations": ">=20.0.0",
+    "@angular/cdk": ">=20.0.0",
+    "@angular/common": ">=20.0.0",
+    "@angular/compiler": ">=20.0.0",
+    "@angular/core": ">=20.0.0",
+    "@angular/forms": ">=20.0.0",
+    "@angular/material": ">=20.0.0",
+    "@angular/platform-browser": ">=20.0.0",
+    "@angular/platform-browser-dynamic": ">=20.0.0",
+    "@angular/router": ">=20.0.0",
+    "@angular/build": ">=20.0.0",
+    "@angular/cli": ">=20.0.0",
+    "@angular/compiler-cli": ">=20.0.0",
+    "@angular/language-service": ">=20.0.0"
   }
 }

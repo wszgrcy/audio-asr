@@ -1,0 +1,186 @@
+{
+  "6575414247091445364": {
+    "id": "6575414247091445364",
+    "text": "转换失败",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "转换失败"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 71,
+        "column": 22
+      },
+      "end": {
+        "line": 71,
+        "column": 37
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\ffmpeg.service.ts"
+    },
+    "target": "转换失败"
+  },
+  "8956561068478955823": {
+    "id": "8956561068478955823",
+    "text": "音频文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "音频文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 9,
+        "column": 8
+      },
+      "end": {
+        "line": 9,
+        "column": 23
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "音频文件"
+  },
+  "7030558723587737074": {
+    "id": "7030558723587737074",
+    "text": "视频文件",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "视频文件"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 14,
+        "column": 8
+      },
+      "end": {
+        "line": 14,
+        "column": 23
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\file-filter.service.ts"
+    },
+    "target": "视频文件"
+  },
+  "7162156863641033358": {
+    "id": "7162156863641033358",
+    "text": "登录过程中发生错误，请稍后重试",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "登录过程中发生错误，请稍后重试"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 49,
+        "column": 17
+      },
+      "end": {
+        "line": 49,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\login.service.ts"
+    },
+    "target": "登录过程中发生错误，请稍后重试"
+  },
+  "7673911978668330207": {
+    "id": "7673911978668330207",
+    "text": "退出过程中发生错误，请稍后重试",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "退出过程中发生错误，请稍后重试"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 65,
+        "column": 17
+      },
+      "end": {
+        "line": 65,
+        "column": 43
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\login.service.ts"
+    },
+    "target": "退出过程中发生错误，请稍后重试"
+  },
+  "6435535039353658352": {
+    "id": "6435535039353658352",
+    "text": "准备请求",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "准备请求"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 25,
+        "column": 18
+      },
+      "end": {
+        "line": 25,
+        "column": 33
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\service\\media-parse.service.ts"
+    },
+    "target": "准备请求"
+  },
+  "948914772096209323": {
+    "id": "948914772096209323",
+    "text": "配置",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "配置"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 52
+      },
+      "end": {
+        "line": 20,
+        "column": 65
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\piying\\page-define\\global-config.ts"
+    },
+    "target": "配置"
+  },
+  "4311277299278710073": {
+    "id": "4311277299278710073",
+    "text": "退出",
+    "meaning": "",
+    "description": "",
+    "messageParts": [
+      "退出"
+    ],
+    "placeholderNames": [],
+    "associatedMessageIds": {},
+    "location": {
+      "start": {
+        "line": 39,
+        "column": 29
+      },
+      "end": {
+        "line": 39,
+        "column": 42
+      },
+      "file": "C:\\code\\my-project\\audio-asr\\mobile\\src\\app\\piying\\page-define\\global-config.ts"
+    },
+    "target": "退出"
+  }
+}

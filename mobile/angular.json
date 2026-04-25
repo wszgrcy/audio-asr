@@ -27,6 +27,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "i18n-assets",
+                "output": "assets/i18n"
+              },
+              {
+                "glob": "**/*",
                 "input": "./node_modules/@web-common/raw/assets",
                 "output": "assets"
               },
