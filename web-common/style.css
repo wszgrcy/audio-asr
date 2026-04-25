@@ -36,6 +36,7 @@ div[pi-schema-view-page] {
   width: 50%;
   justify-content: flex-start;
   content: '';
+  flex: 0;
 }
 .navbar:has(> *:last-child:not(.navbar-end))::after {
   display: inline-flex;
@@ -43,6 +44,7 @@ div[pi-schema-view-page] {
   width: 50%;
   justify-content: flex-end;
   content: '';
+  flex: 0;
 }
 .dock {
   position: sticky;
@@ -99,4 +101,21 @@ dialog .modal-box {
     display: flex;
     flex-direction: column;
   }
+}
+
+.navbar {
+  overflow: hidden;
+}
+.navbar-start {
+  flex: 0;
+  min-width: 2rem;
+}
+.navbar-end {
+  flex: 0;
+  min-width: 2rem;
+}
+.navbar-center {
+  flex: 1;
+  overflow: hidden;
+  justify-content: center;
 }

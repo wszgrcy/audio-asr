@@ -56,7 +56,9 @@ export class LoginService implements ILoginService {
   #tokenStorage = inject(TokenStoreToken);
   async signOut(): Promise<void> {
     try {
-      await (await this.#remote.authClient)().signOut();
+      try {
+        await (await this.#remote.authClient)().signOut();
+      } catch (error) {}
       await this.#db.clean();
       await this.#tokenStorage.remove();
       await this.router.navigateByUrl(this.LOGIN_ROUTE);

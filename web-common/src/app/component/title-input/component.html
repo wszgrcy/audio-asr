@@ -1,28 +1,28 @@
 <ng-template #templateRef>
-  <label class="input outline-none shadow-none border-none">
+  <label class="input outline-none shadow-none border-none overflow-hidden!">
     <input
       type="text"
-      class="grow field-sizing-content"
+      class="flex-1 field-sizing-content text-center"
       [(ngModel)]="value$"
       (focus)="focusChange()"
       #el
     />
     @if (!isEdit$()) {
       <button
-        class="btn btn-ghost btn-circle btn-xs"
+        class="btn btn-ghost btn-circle btn-xs flex-none"
         (click)="focusChange(true, el)"
       >
         <span class="material-icons icon-4"> edit </span>
       </button>
     } @else {
       <button
-        class="btn btn-ghost btn-circle check btn-success btn-xs"
+        class="btn btn-ghost btn-circle check btn-success btn-xs flex-none"
         (click)="valueChange2()"
       >
         <span class="material-icons icon-4"> check </span>
       </button>
       <button
-        class="btn btn-ghost btn-circle close btn-error btn-xs"
+        class="btn btn-ghost btn-circle close btn-error btn-xs flex-none"
         (click)="blurChange()"
       >
         <span class="material-icons icon-4"> close </span>

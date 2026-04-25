@@ -48,7 +48,7 @@ export const SelectKindPage = v.pipe(
         center: v.pipe(
           NFCSchema,
           safeDefine.setComponent('common-data', (actions) => {
-           return [actions.inputs.patch({ content: $localize`选择处理` })];
+            return [actions.inputs.patch({ content: $localize`选择处理` })];
           }),
 
           // todo 点击后菜单
@@ -64,7 +64,10 @@ export const SelectKindPage = v.pipe(
           safeDefine.setComponent('button', (actions) => {
             return [
               actions.inputs.patch({
-                content: { title: $localize`使用上次设备`, icon: { fontIcon: 'mic' } },
+                content: {
+                  title: $localize`使用上次设备`,
+                  icon: { fontIcon: 'mic' },
+                },
                 color: 'secondary',
                 size: 'lg',
               }),
@@ -95,7 +98,10 @@ export const SelectKindPage = v.pipe(
           safeDefine.setComponent('button', (actions) => {
             return [
               actions.inputs.patch({
-                content: { title: $localize`使用设备`, icon: { fontIcon: 'mic' } },
+                content: {
+                  title: $localize`使用设备`,
+                  icon: { fontIcon: 'mic' },
+                },
                 color: 'primary',
                 size: 'lg',
               }),
@@ -170,7 +176,7 @@ export const SelectKindPage = v.pipe(
                       .get(FormDialogService)
                       .open({
                         class: 'page-form-dialog',
-                       cancelButton: $localize`取消`,
+                        cancelButton: $localize`取消`,
                         injector: field.injector,
                         schema: v.pipe(
                           v.intersect([
@@ -306,7 +312,7 @@ export const SelectKindPage = v.pipe(
                       .get(FormDialogService)
                       .open({
                         class: 'page-form-dialog',
-                       cancelButton: $localize`取消`,
+                        cancelButton: $localize`取消`,
                         injector: field.injector,
                         // 文件设置需要用本地的
                         schema: v.pipe(

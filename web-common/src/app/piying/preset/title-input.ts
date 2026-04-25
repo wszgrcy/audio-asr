@@ -38,4 +38,5 @@ export const TitleInputDefine = v.pipe(
       });
     },
   }),
+  actions.wrappers.set([])
 );

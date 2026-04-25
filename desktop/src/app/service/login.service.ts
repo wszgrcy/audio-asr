@@ -38,7 +38,7 @@ export class LoginService implements ILoginService {
       ).user.findConfig.mutate();
       await this.#injector
         .get(GlobalConfigService)
-        .patchConfig(config?.config??{}, undefined, 'server');
+        .patchConfig(config?.config ?? {}, undefined, 'server');
 
       await this.router.navigateByUrl(RouterConfig.main);
     } catch (error) {
@@ -53,7 +53,9 @@ export class LoginService implements ILoginService {
 
   async signOut(): Promise<void> {
     try {
-      await trpcClient.auth.signOut.query();
+      try {
+        await trpcClient.auth.signOut.query();
+      } catch (error) {}
       await this.#db.clean();
       await this.router.navigateByUrl(this.LOGIN_ROUTE);
     } catch (error) {

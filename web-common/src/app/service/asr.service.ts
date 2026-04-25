@@ -71,6 +71,14 @@ export class AsrService {
   }
   async save2(i1: v.InferInput<typeof ASR_INSERT_Define>) {
     const input = v.parse(ASR_INSERT_Define, i1);
+    if (
+      !(
+        input.data.config?.file?.translate.enable &&
+        input.data.config?.file?.translate.value
+      )
+    ) {
+      input.status = 2;
+    }
     const [result] = await db$$().insert(asrEntity).values(input).returning();
     return result;
   }
