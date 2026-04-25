@@ -4,6 +4,7 @@ import { asControl } from '@piying/valibot-visit';
 import { actions, disableWhen, setComponent } from '@piying/view-angular-core';
 import { LanguageList } from '../const/language';
 import { map } from 'rxjs';
+import { localeKey } from '../const/locale';
 const STR_DEFINE = v.string();
 export const ASRType = v.picklist([
   'audio-device',
@@ -26,7 +27,7 @@ export const TranslateConfigValueDefine = v.object({
     actions.props.patch({
       multiple: true,
       options: LanguageList.map((item) => {
-        return { label: item.zh, value: item.value };
+        return { label: item[localeKey], value: item.value };
       }),
     }),
     v.title($localize`翻译为`),
@@ -68,7 +69,7 @@ export const AudioConfigDefine = v.object({
     setComponent('select'),
     actions.props.patch<string>({
       options: LanguageList.map((item) => {
-        return { label: item.zh, value: item.value };
+        return { label: item[localeKey], value: item.value };
       }),
     }),
     v.title($localize`音频语言`),
