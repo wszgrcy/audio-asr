@@ -20,7 +20,7 @@
     "electron:serve-tsc": "tsx ./script/build.ts --watch",
     "electron:serve": "wait-on tcp:4200 && chcp.com 65001 && npm run electron:serve-tsc",
     "electron:local": "npm run build:dev && electron .",
-    "electron:build": "rimraf ./dist && concurrently \"npm run build:main -- --prod\" \"ng build -c production\" && tsx ./script/electron-build.ts",
+    "electron:build": "rimraf ./dist && concurrently \"npm run build:main -- --prod\" \"npm run build:i18n && ng build -c production\" && tsx ./script/electron-build.ts",
     "test": "ng test --watch=false",
     "test:watch": "ng test",
     "e2e": "npm run build:prod && playwright test -c e2e/playwright.config.ts e2e/",
