@@ -1,38 +1,40 @@
-# 部署文档
+# Deployment Guide
 
-## 快速开始
+[中文文档](readme_zh.md) | [English Documentation](README.md)
 
-## 服务端部署流程
+## Quick Start
 
-🔗 [Docker 部署配置文件夹](https://github.com/wszgrcy/audio-asr/tree/main/docker/deploy)
+## Server Deployment Process
 
-### 1. 选择部署版本
+🔗 [Docker Deployment Configuration Folder](https://github.com/wszgrcy/audio-asr/tree/main/docker/deploy)
 
-根据你的操作系统和硬件配置选择合适的 `docker-compose` 文件：
+### 1. Choose Deployment Version
 
-> ⚠️ 说明：以下硬件配置为 Whisper 的要求。如果你已有兼容 OpenAI `transcriptions` 接口的服务，可在 `docker-compose.yml` 中注释掉 Whisper 相关服务。
+Select the appropriate `docker-compose` file based on your operating system and hardware configuration:
 
-| 平台    | 硬件配置             | 配置文件                                               |
-| ------- | -------------------- | ------------------------------------------------------ |
-| Linux   | NVIDIA GPU           | `docker-compose.cuda.yml`                              |
-| Linux   | AMD GPU              | `docker-compose.rocm.yml`                              |
-| Linux   | 仅 CPU               | `docker-compose.yml`                                   |
-| Windows | NVIDIA/AMD/Intel GPU | [手动部署 Whisper (Vulkan)](#windows-手动部署-whisper) |
-| Windows | 仅 CPU               | `docker-compose.yml`                                   |
+> ⚠️ Note: The following hardware configurations are requirements for Whisper. If you already have a service compatible with the OpenAI `transcriptions` API, you can comment out the Whisper-related services in `docker-compose.yml`.
 
-#### windows-手动部署-whisper
+| Platform | Hardware Configuration     | Configuration File                                       |
+| -------- | -------------------------- | -------------------------------------------------------- |
+| Linux    | NVIDIA GPU                 | `docker-compose.cuda.yml`                                |
+| Linux    | AMD GPU                    | `docker-compose.rocm.yml`                                |
+| Linux    | CPU Only                   | `docker-compose.yml`                                     |
+| Windows  | NVIDIA/AMD/Intel GPU       | [Manual Whisper Deployment (Vulkan)](#windows-manual-whisper-deployment) |
+| Windows  | CPU Only                   | `docker-compose.yml`                                     |
 
-- 修改 docker-compose.yml
+#### windows-manual-whisper-deployment
 
-注释掉 Docker 中的 whisper 服务：
+- Modify docker-compose.yml
+
+Comment out the whisper service in Docker:
 
 ```yaml
 services:
   db:
-    # ... db 配置保持不变 ...
+    # ... db configuration remains unchanged ...
 
   server:
-    # ... server 配置保持不变 ...
+    # ... server configuration remains unchanged ...
 
   # whisper:
   #   image: ghcr.io/ggml-org/whisper.cpp:main
@@ -42,17 +44,17 @@ services:
   #   command: "..."
 ```
 
-- 下载 Whisper
+- Download Whisper
 
-Windows 下推荐使用 Vulkan 手动部署 Whisper.cpp。
+For Windows, it is recommended to manually deploy Whisper.cpp using Vulkan.
 
-🔗 [下载 Windows 版本](https://github.com/jonasthilo/whisper.cpp/releases)
+🔗 [Download Windows Version](https://github.com/jonasthilo/whisper.cpp/releases)
 
-> ⚠️ 官方暂时没有预构建的制品，此为 fork 仓库。
+> ⚠️ The official repository does not currently have pre-built artifacts; this is a forked repository.
 
-- 启动 Whisper 服务
+- Start Whisper Service
 
-⚠️ **重要**：必须使用 **PowerShell** 启动，不要使用 Git Bash 或 MSYS2 终端。
+⚠️ **Important**: You must use **PowerShell** to start, do not use Git Bash or MSYS2 terminal.
 
 ```powershell
 ./whisper-server -et 2.0 --suppress-nst -m ./models/ggml-small-q8_0.bin --request-path /v1/audio/ --port 8080 --host 0.0.0.0 --inference-path transcriptions
@@ -60,26 +62,26 @@ Windows 下推荐使用 Vulkan 手动部署 Whisper.cpp。
 
 ---
 
-### 2. 复制部署文件
+### 2. Copy Deployment Files
 
-将选择的文件复制到目标位置并重命名为 `docker-compose.yml`。
+Copy the selected file to the target location and rename it to `docker-compose.yml`.
 
-#### Linux/macOS 示例
+#### Linux/macOS Example
 
 ```bash
-# CUDA 版本
+# CUDA version
 cp docker/deploy/docker-compose.cuda.yml /your/deploy/path/docker-compose.yml
 
-# ROCm 版本
+# ROCm version
 cp docker/deploy/docker-compose.rocm.yml /your/deploy/path/docker-compose.yml
 
-# CPU 版本
+# CPU version
 cp docker/deploy/docker-compose.yml /your/deploy/path/docker-compose.yml
 
 cd /your/deploy/path/
 ```
 
-#### Windows (PowerShell) 示例
+#### Windows (PowerShell) Example
 
 ```powershell
 Copy-Item "docker\deploy\docker-compose.yml" "C:\whisper-deploy\docker-compose.yml"
@@ -88,76 +90,78 @@ cd C:\whisper-deploy
 
 ---
 
-### 3. 配置环境变量
+### 3. Configure Environment Variables
 
-复制 `.env` 并编辑 `.env` 文件，配置以下关键参数：
+Copy `.env` and edit the `.env` file to configure the following key parameters:
 
 ```env
 # openssl rand -base64 32
 BETTER_AUTH_SECRET=your-secret-key
-# 暂时用不到
+# Not currently in use
 BETTER_AUTH_URL=http://your-domain:port
 
-# 初始密码
+# Initial password
 ADMIN_PASSWORD=12345678
 
-# 数据库配置
+# Database configuration
 DATABASE_URL=postgres://postgres:postgres12345678@db:5432/postgres?sslmode=disable
 ```
 
 ---
 
-### 4. 准备模型文件
+### 4. Prepare Model Files
 
-- 非 GPU 部署建议选择小模型以节省资源
-- 🔗 [模型下载地址](https://huggingface.co/ggerganov/whisper.cpp/tree/main)
-- 将模型文件放入与 `docker-compose.yml` 同级的 `models/` 目录
+- For non-GPU deployments, it is recommended to choose smaller models to save resources
+- 🔗 [Model Download Link](https://huggingface.co/ggerganov/whisper.cpp/tree/main)
+- Place the model files in the `models/` directory at the same level as `docker-compose.yml`
 
 ---
 
-### 5. 启动服务
+### 5. Start Services
 
 ```bash
-# 启动所有服务
+# Start all services
 docker-compose up -d
 
-# 查看运行状态
+# Check running status
 docker-compose ps
 
-# 查看日志
+# View logs
 docker-compose logs -f
 
-# 停止服务
+# Stop services
 docker-compose down
 ```
 
-## 客户端
+## Client
 
-### 下载
+### Download
 
-🔗 [客户端下载地址](https://github.com/wszgrcy/audio-asr/releases)
+🔗 [Client Download Link](https://github.com/wszgrcy/audio-asr/releases)
 
-### 登录
+### Login
 
-打开客户端后，使用以下默认账号登录：
+After opening the client, login with the following default credentials:
 
-- **账号**：`admin@admin.com`
-- **密码**：`ADMIN_PASSWORD` 环境变量中配置的密码（默认为 `12345678`）
+- **Username**: `admin@admin.com`
+- **Password**: The password configured in the `ADMIN_PASSWORD` environment variable (default is `12345678`)
 
-### android手机版本要求
-- 如果要进行外放音频录制,那么应该在android 10及以上
-- 手机webview版本应当在120以上才能更好的获得支持,低于此版本需要手动升级webview
+### Android Phone Version Requirements
+- To perform speaker audio recording, Android 10 or above is required
+- The mobile WebView version should be 120 or above for better support; below this version requires manual WebView upgrade
+
 ---
 
-## 目录结构说明
+## Directory Structure
 
 ```
 deploy/
-├── docker-compose.yml        # CPU 版本（默认，跨平台兼容）
-├── docker-compose.cuda.yml   # NVIDIA GPU CUDA 版本
-├── docker-compose.rocm.yml   # AMD GPU ROCm/Vulkan 版本
-├── .env                      # 环境变量配置文件（需要手动创建）
-├── .env.example              # 环境变量示例文件（可选）
-├── models/                   # 模型存储目录（需要手动创建）
-└── data/                     # 数据库数据目录（自动创建）
+├── docker-compose.yml        # CPU version (default, cross-platform compatible)
+├── docker-compose.cuda.yml   # NVIDIA GPU CUDA version
+├── docker-compose.rocm.yml   # AMD GPU ROCm/Vulkan version
+├── .env                      # Environment variable configuration file (manually created)
+├── .env.example              # Environment variable example file (optional)
+├── models/                   # Model storage directory (manually created)
+└── data/                     # Database data directory (auto-created)
 ```
+
